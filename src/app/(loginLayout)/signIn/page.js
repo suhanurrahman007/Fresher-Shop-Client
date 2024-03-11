@@ -73,7 +73,7 @@ const Login = () => {
                 </div>
                 {/* input side  */}
                 <div className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%]">
-                    <h2 className="pb-8 text-center text-3xl font-bold text-[#8EA7E9]">Login Here</h2>
+                    <Link href={"/"} className="pb-8 text-center text-3xl font-bold text-[#8EA7E9]">Login Here</Link>
                     <form form onSubmit = {
                         handleSubmit(onLoginSubmit)
                     }
@@ -115,8 +115,8 @@ const Login = () => {
                             characters, digits, and lowercase letters.
                             </p>
                         )}
-                        <p className="text-[14px] text-gray-400">Do not have an account ? <Link href={"/signUp"} className="text-[#8EA7E9] duration-300 hover:scale-95 hover:underline hover:text-blue-900">Create one</Link></p>
-                        <input className="w-[80%] rounded-lg bg-[#8EA7E9] hover:bg-[#140d32] shadow-md duration-300 hover:scale-95 hover:shadow btn font-medium text-white md:w-[60%]" type="submit" />
+                        <p className="text-[14px] text-gray-400">Do not have an account ? <Link href={"/signUp"} className="text-[#8EA7E9] duration-300 hover:scale-95 hover:underline hover:text-blue-900 font-bold">Create one</Link></p>
+                        <input className="w-[80%] rounded-lg bg-[#8EA7E9] hover:bg-[#140d32] shadow-md duration-300 hover:scale-95 hover:shadow btn font-medium text-white md:w-[60%]" type="submit" value={"Login"} />
                     </form>
                     {/* divider  */}
                     <div className="my-6 flex items-center px-8">
