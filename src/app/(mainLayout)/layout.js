@@ -1,10 +1,29 @@
+import Navbar from "@/components/share/Navbar/Navbar";
+import SideNavbar from "@/components/share/Navbar/SideNavbar";
+import Image from "next/image";
+import logo from "@/assets/Logo.png"
 const Layout = ({ children }) => {
     return (
         <div>
-            <h1>navbar</h1>
-            {children}
-            <h2>footer</h2>
-        </div>
+      <div className="drawer">
+            <input id="my-drawer-3" type="checkbox" className="drawer-toggle" /> 
+            <div className="drawer-content flex flex-col">
+                {/* <!-- Navbar --> */}
+                <Navbar></Navbar>
+                {/* <!-- Page content here --> */}
+                {children}
+            </div> 
+            <div className="drawer-side">
+                <label for="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
+                <ul  className = "menu p-4 w-52 min-h-full text-white bg-[#0D0D21] flex justify-between" >
+                {/* <!-- Sidebar content here --> */}
+                <SideNavbar></SideNavbar>
+                </ul>
+            </div>
+            </div>
+      
+
+    </div>
     );
 };
 

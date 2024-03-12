@@ -1,0 +1,7 @@
+.active {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: blue;
+  gap: 4px;
+}
