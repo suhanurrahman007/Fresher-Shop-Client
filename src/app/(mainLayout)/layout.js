@@ -1,7 +1,6 @@
 import Navbar from "@/components/share/Navbar/Navbar";
 import SideNavbar from "@/components/share/Navbar/SideNavbar";
-import Image from "next/image";
-import logo from "@/assets/Logo.png"
+
 const Layout = ({ children }) => {
     return (
         <div>

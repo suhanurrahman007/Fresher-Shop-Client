@@ -1,7 +1,6 @@
+import { Carousel } from "@/components/share/Carousel/Carousel";
 import Navbar from "@/components/share/Navbar/Navbar";
 import SideNavbar from "@/components/share/Navbar/SideNavbar";
-import Image from "next/image";
-import logo from "@/assets/Logo.png"
 const HomePage = () => {
   return (
     <div>
@@ -11,7 +10,7 @@ const HomePage = () => {
                 {/* <!-- Navbar --> */}
                 <Navbar></Navbar>
                 {/* <!-- Page content here --> */}
-                hello
+                <Carousel />
             </div> 
             <div className="drawer-side">
                 <label for="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
