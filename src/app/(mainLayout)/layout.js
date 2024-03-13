@@ -1,3 +1,4 @@
+import Footer from "@/components/share/Footer/Footer";
 import Navbar from "@/components/share/Navbar/Navbar";
 import SideNavbar from "@/components/share/Navbar/SideNavbar";
 
@@ -11,6 +12,7 @@ const Layout = ({ children }) => {
                 <Navbar></Navbar>
                 {/* <!-- Page content here --> */}
                 {children}
+                <Footer />
             </div> 
             <div className="drawer-side">
                 <label for="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
