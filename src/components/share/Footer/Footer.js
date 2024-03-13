@@ -5,21 +5,23 @@ import {
   FaCcPaypal,
   FaCcVisa,
 } from "react-icons/fa";
+import Container from "@/components/share/Container";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className=" bg-[#000C21] py-5 md:px-0 px-10">
+    <footer className=" bg-[#000C21] py-5">
+      <Container>
         <div className="lg:footer lg:text-start text-center py-10  text-white max-w-screen-xl mx-auto ">
           <nav>
             <header className="footer-title text-4xl font-bold text-blue-500">
-              Quick-Ship
+              Fresher Super Market
             </header>
 
-            <p className=" leading-8 text-xl text-[#9999] ">
-              QuickShip, the epitome of efficiency in the realm of international
-              courier services, stands as a beacon for swift and reliable parcel
-              deliveries across borders.
+            <p className=" text-justify text-sm text-[#9999] ">
+              Fresher Super Market is dedicated to fulfilling all your grocery
+              needs. We offer high-quality products, excellent customer service,
+              and a convenient shopping experience. Our wide selection includes
+              fresh produce, and household essentials.
             </p>
           </nav>
           <nav>
@@ -73,14 +75,14 @@ const Footer = () => {
           </nav>
         </div>
         <div className="max-w-screen-xl mx-auto ">
-          <hr></hr>
+          <hr className="border-t border-gray-600 my-4" />
           <div className="text-center mt-5  text-sm font-semibold  text-white ">
             <a className="link link-hover p-3">RETURNS</a>
             <a className="link link-hover p-3">ORDERS HISTORY</a>
             <a className="link link-hover p-3">SITE MAP</a>
             <a className="link link-hover mb-5 p-3">TESTIMONIAL</a>
           </div>
-          <p className="text-center my-4 text-gray-500">
+          <p className="text-center my-4 text-gray-600">
             Copyright © {new Date().getFullYear()} Automotive Quick-Ship. All
             Rights Reserved.
           </p>
@@ -91,8 +93,8 @@ const Footer = () => {
             <FaCcApplePay className="text-[#6a262b]"></FaCcApplePay>
           </div>
         </div>
-      </footer>
-    </div>
+      </Container>
+    </footer>
   );
 };
 

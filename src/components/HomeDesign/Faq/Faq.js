@@ -47,7 +47,7 @@ const Faq = () => {
   return (
     <div className="pt-10 pb-20">
       <Container>
-        <div className="justify-center items-center grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="justify-center items-center grid grid-cols-1 lg:grid-cols-2 gap-10  lg:gap-14">
           <Gallery />
           <div>
             <div className="pt-14">
@@ -58,7 +58,7 @@ const Faq = () => {
                 most commonly asked questions
               </h1>
             </div>
-            <div className="space-y-4 p-2 md:p-6">
+            <div className="space-y-4">
               {data?.map((data, idx) => (
                 <div key={idx}>
                   {/* header / Title */}
