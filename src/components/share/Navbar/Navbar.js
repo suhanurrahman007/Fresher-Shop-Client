@@ -130,13 +130,15 @@ const Navbar = () => {
           </label>
         </div>
         <div class="flex-1 justify-end lg:justify-start">
-          <Image
-            className="w-20"
-            src={logo}
-            alt="logo"
-            width={500}
-            height={500}
-          ></Image>
+          <Link href={"/"}>
+            <Image
+              className="w-20 ml-7 cursor-pointer hover:scale-110 delay-150 duration-300 ease-in-out"
+              src={logo}
+              alt="logo"
+              width={500}
+              height={500}
+            ></Image>
+          </Link>
         </div>
         <div class="flex-none items-center justify-center hidden lg:block">
           <ul class="menu menu-horizontal flex items-center">

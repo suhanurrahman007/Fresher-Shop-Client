@@ -29,12 +29,12 @@ export const TypewriterEffect = ({
         },
         {
           duration: 0.3,
-          delay: stagger(0.1),
+          delay: stagger(0.2),
           ease: "easeInOut",
         }
       );
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   const renderWords = () => {
     return (
@@ -64,7 +64,7 @@ export const TypewriterEffect = ({
   return (
     <div
       className={cn(
-        "text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center",
+        "text-base sm:text-md md:text-2xl lg:text-4xl font-bold",
         className
       )}
     >
