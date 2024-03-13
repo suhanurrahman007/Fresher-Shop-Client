@@ -107,18 +107,18 @@ const Navbar = () => {
   };
   return (
     <div>
-      <div class="w-full fixed z-50 navbar h-[75px] bg-[#000C21] text-white flex justify-between items-center">
-        <div class="flex-none lg:hidden">
+      <div className="w-full fixed z-50 navbar h-[75px] bg-[#000C21] text-white flex justify-between items-center">
+        <div className="flex-none lg:hidden">
           <label
             for="my-drawer-3"
             aria-label="open sidebar"
-            class="btn btn-square btn-ghost"
+            className="btn btn-square btn-ghost"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              class="inline-block w-6 h-6 stroke-current"
+              className="inline-block w-6 h-6 stroke-current"
             >
               <path
                 stroke-linecap="round"
@@ -129,7 +129,7 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
-        <div class="flex-1 justify-end lg:justify-start">
+        <div className="flex-1 justify-end lg:justify-start">
           <Link href={"/"}>
             <Image
               className="w-20 ml-7 cursor-pointer hover:scale-110 delay-150 duration-300 ease-in-out"
@@ -146,25 +146,29 @@ const Navbar = () => {
             {links}
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10  rounded-full">
+                <div className="relative group">
                   {user?.photoURL ? (
-                    <div className="avatar">
-                      <div className="rounded-full border-[3px] border-blue-600">
-                        <Image
-                          alt="image"
-                          src={user?.photoURL}
-                          width={500}
-                          height={500}
-                        />
-                      </div>
-                    </div>
+                    <Image
+                      src={user?.photoURL}
+                      width={500}
+                      height={500}
+                      className="size-[50px] bg-slate-500 object-cover rounded-full border-[2px] border-blue-600"
+                      alt="avatar navigate ui"
+                    />
                   ) : (
                     <Image
                       src={avatar}
-                      height={500}
                       width={500}
-                      alt="avatar"
-                    ></Image>
+                      height={500}
+                      className="size-[50px] bg-slate-500 object-cover rounded-full border-[2px] border-blue-600"
+                      alt="avatar navigate ui"
+                    />
+                  )}
+                  {user && (
+                    <>
+                      <span className="size-3 bg-green-500 absolute rounded-full bottom-2 right-0 border-[3px] border-white"></span>
+                      <span className="size-3 bg-green-500 absolute rounded-full bottom-2 right-0 animate-ping"></span>
+                    </>
                   )}
                 </div>
               </label>

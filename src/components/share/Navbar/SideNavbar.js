@@ -159,7 +159,7 @@ const SideNavbar = () => {
 
   return (
     <div>
-      <div className="w-20 rounded-full flex justify-center items-center ml-12">
+      <div className="w-20 mt-16 rounded-full flex justify-center items-center ml-12">
         {user?.photoURL ? (
           <div className="avatar">
             <div className="rounded-full border-[3px] border-blue-600">

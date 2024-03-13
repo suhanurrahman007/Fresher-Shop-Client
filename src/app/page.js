@@ -1,3 +1,4 @@
+import Faq from "@/components/HomeDesign/Faq/Faq";
 import { Carousel } from "@/components/share/Carousel/Carousel";
 import Navbar from "@/components/share/Navbar/Navbar";
 import SideNavbar from "@/components/share/Navbar/SideNavbar";
@@ -11,6 +12,7 @@ const HomePage = () => {
                 <Navbar></Navbar>
                 {/* <!-- Page content here --> */}
                 <Carousel />
+                <Faq />
             </div> 
             <div className="drawer-side">
                 <label for="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
