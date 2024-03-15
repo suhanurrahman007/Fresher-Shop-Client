@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Container from "@/components/share/Container";
 import Gallery from "./Gallery";
 import { useState } from "react";
@@ -43,33 +43,32 @@ const Faq = () => {
     },
   ];
 
-
   return (
     <div className="pt-10 pb-20">
       <Container>
-        <div className="justify-center items-center grid grid-cols-1 lg:grid-cols-2 gap-10  lg:gap-14">
+        <div className="justify-center items-center grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
           <Gallery />
           <div>
-            <div className="pt-14">
-              <p className="text-center  text-purple-600 mb-2">
+            <div className="pt-7">
+              <p className="text-center text-purple-600 mb-2">
                 Still have questions ?
               </p>
-              <h1 className="text-center text-3xl font-extrabold uppercase">
+              <h1 className="text-center text-3xl mb-7 font-extrabold uppercase">
                 most commonly asked questions
               </h1>
             </div>
             <div className="space-y-4">
-              {data?.map((data, idx) => (
+              {data?.map((item, idx) => (
                 <div key={idx}>
                   {/* header / Title */}
                   <div
                     onClick={() => handleToggle(idx)}
-                    className={`px-4 md:px-8 py-4 bg-${data.color}-50 border-${data.color}-500 border-l-[3px] cursor-pointer`}
+                    className={`px-4 md:px-8 py-4 bg-${item.color}-50 border-${item.color}-500 border-l-[3px] cursor-pointer`}
                   >
                     <div className="flex items-center">
                       <span>
                         <svg
-                          className={`mr-4 fill-${data.color}-900 shrink-0`}
+                          className={`mr-4 fill-${item.color}-900 shrink-0`}
                           width="16"
                           height="16"
                           xmlns="http://www.w3.org/2000/svg"
@@ -94,8 +93,8 @@ const Faq = () => {
                           />
                         </svg>
                       </span>
-                      <h4 className={`text-${data.color}-900 text-lg`}>
-                        {data.title}
+                      <h4 className={`text-${item.color}-900 text-lg`}>
+                        {item.title}
                       </h4>
                     </div>
                   </div>
@@ -109,9 +108,9 @@ const Faq = () => {
                   >
                     <div className="overflow-hidden">
                       <div
-                        className={`pb-6 pr-4 pl-14 md:pl-16 border-l-[3px] text-sm text-${data.color}-900 bg-${data.color}-50 border-${data.color}-500`}
+                        className={`pb-6 pr-4 pl-14 md:pl-16 border-l-[3px] text-sm text-${item.color}-900 bg-${item.color}-50 border-${item.color}-500`}
                       >
-                        {data?.description}
+                        {item?.description}
                       </div>
                     </div>
                   </div>

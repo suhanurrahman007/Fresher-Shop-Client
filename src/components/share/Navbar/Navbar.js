@@ -107,7 +107,7 @@ const Navbar = () => {
   };
   return (
     <div>
-      <div className="w-full fixed z-50 navbar h-[75px] bg-[#000C21] text-white flex justify-between items-center">
+      <div className="w-full fixed z-50 navbar h-[77px] bg-[#000C21] text-white flex justify-between items-center">
         <div className="flex-none lg:hidden">
           <label
             for="my-drawer-3"

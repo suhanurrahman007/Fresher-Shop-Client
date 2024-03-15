@@ -1,4 +1,7 @@
+
+// import Accordion4 from "@/components/HomeDesign/F";
 import Faq from "@/components/HomeDesign/Faq/Faq";
+import LatestProducts from "@/components/HomeDesign/LatestProducts/LatestProducts";
 import OurTeams from "@/components/HomeDesign/OurTeam/OurTeam";
 import { Carousel } from "@/components/share/Carousel/Carousel";
 import Footer from "@/components/share/Footer/Footer";
@@ -14,8 +17,10 @@ const HomePage = () => {
                 <Navbar></Navbar>
                 {/* <!-- Page content here --> */}
                 <Carousel />
+                <LatestProducts />
                 <Faq />
                 <OurTeams />
+                {/* <Accordion4 /> */}
                 <Footer />
             </div> 
             <div className="drawer-side">
