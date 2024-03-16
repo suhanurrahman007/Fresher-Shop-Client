@@ -1,12 +1,11 @@
 "use client"
-import LaProductCard from "./LaProductCard";
 import useLatestProducts from "@/components/hooks/useLatestProducts";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from "swiper/modules";
-import SectionTitle from "@/components/share/SectionTitle";
 import Container from "@/components/share/Container";
+import ProductCard from "@/app/(mainLayout)/shop/ProductCard";
 
 
 const LatestProducts = () => {
@@ -49,7 +48,7 @@ const LatestProducts = () => {
             >
               {latestProducts?.map((item) => (
                 <SwiperSlide key={item?._id}>
-                  <LaProductCard item={item} />
+                  <ProductCard item={item} />
                 </SwiperSlide>
               ))}
             </Swiper>

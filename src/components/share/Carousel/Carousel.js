@@ -49,7 +49,10 @@ export const Carousel = () => {
       currentSlider === sliders.length - 1 ? 0 : currentSlider + 1
     );
 
-  const isSmallScreen = window.innerWidth <= 768;
+    const isSmallScreen =
+      typeof window !== "undefined" && window.innerWidth <= 768;
+
+
 
   return (
     <div

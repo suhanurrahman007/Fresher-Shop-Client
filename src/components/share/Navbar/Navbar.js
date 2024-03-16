@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { FaHome, FaUserTag, FaServicestack, FaBlog } from "react-icons/fa";
 import { BiLogOut, BiSolidDashboard } from "react-icons/bi";
 import { MdLogin, MdCalculate } from "react-icons/md";
+import { FaShopify } from "react-icons/fa";
 import "./Navbar.css";
 import Image from "next/image";
 import logo from "@/assets/Logo.png";
@@ -45,6 +46,22 @@ const Navbar = () => {
               <FaUserTag />
             </span>
             About Us
+          </span>
+        </Link>
+      </li>
+      <li>
+        <Link href="/shop">
+          <span
+            className={`nav-link ${
+              pathname === "/shop"
+                ? "active"
+                : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
+            }`}
+          >
+            <span className="mr-1">
+              <FaShopify />
+            </span>
+            Shop
           </span>
         </Link>
       </li>
