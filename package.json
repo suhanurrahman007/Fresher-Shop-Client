@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@smastrom/react-rating": "^1.5.0",
     "@tanstack/react-query": "^5.28.2",
     "axios": "^1.6.7",

@@ -1,5 +1,6 @@
 
 // import Accordion4 from "@/components/HomeDesign/F";
+import ContactUs from "@/components/HomeDesign/ContactUs/ContactUs";
 import Faq from "@/components/HomeDesign/Faq/Faq";
 import LatestProducts from "@/components/HomeDesign/LatestProducts/LatestProducts";
 import OurTeams from "@/components/HomeDesign/OurTeam/OurTeam";
@@ -22,6 +23,7 @@ const HomePage = () => {
                 <Faq />
                 <OurTeams />
                 <Testimonial />
+                <ContactUs />
                 {/* <Accordion4 /> */}
                 <Footer />
             </div> 
