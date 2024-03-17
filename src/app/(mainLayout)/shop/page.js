@@ -44,7 +44,7 @@ const Shop = () => {
   };
 
   return (
-    <div className="mt-[77px] bg-[#ecfbe8] py-10">
+    <div className="mt-[77px] py-10">
       <Container>
         <Tabs>
           <TabList
@@ -229,7 +229,7 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
       {/* Left arrow */}
       <div
         onClick={() => onPageChange(currentPage - 1)}
-        className={`bg-purple-200 hover:scale-110 scale-100 transition-all duration-200 cursor-pointer hover:bg-sky-100 px-4 py-4 rounded-full ${
+        className={`bg-blue-900 hover:scale-110 scale-100 transition-all duration-200 cursor-pointer hover:bg-sky-400 px-4 py-4 rounded-full ${
           currentPage === 0 ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
@@ -243,7 +243,7 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
             key={page}
             onClick={() => onPageChange(page)}
             className={`cursor-pointer hover:scale-110 scale-100 transition-all duration-200 px-5 ${
-              currentPage === page ? "bg-purple-700 text-white" : "bg-white"
+              currentPage === page ? "bg-purple-900 text-white" : "bg-purple-200"
             } border-sky-300  font-semibold text-gray-700   py-3 rounded-full`}
           >
             {page + 1}
@@ -254,7 +254,7 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
       {/* Right arrow */}
       <div
         onClick={() => onPageChange(currentPage + 1)}
-        className={`bg-purple-200 hover:scale-110 scale-100 transition-all duration-200 cursor-pointer hover:bg-sky-100 px-4 py-4 rounded-full ${
+        className={`bg-blue-900 hover:scale-110 scale-100 transition-all duration-200 cursor-pointer hover:bg-sky-400 px-4 py-4 rounded-full ${
           currentPage === totalPages - 1 ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >

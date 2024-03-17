@@ -1,12 +1,9 @@
 "use client";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import Image from "next/image";
 import { useState } from "react";
-
+import Typewriter from "typewriter-effect"; // Importing Typewriter component
 export const Carousel = () => {
   const [currentSlider, setCurrentSlider] = useState(0);
-
 
   const sliders = [
     {
@@ -36,9 +33,6 @@ export const Carousel = () => {
     },
   ];
 
-
-  const words = sliders[currentSlider].title.split(" ");
-
   const prevSlider = () =>
     setCurrentSlider((currentSlider) =>
       currentSlider === 0 ? sliders.length - 1 : currentSlider - 1
@@ -49,10 +43,8 @@ export const Carousel = () => {
       currentSlider === sliders.length - 1 ? 0 : currentSlider + 1
     );
 
-    const isSmallScreen =
-      typeof window !== "undefined" && window.innerWidth <= 768;
-
-
+  const isSmallScreen =
+    typeof window !== "undefined" && window.innerWidth <= 768;
 
   return (
     <div
@@ -120,14 +112,21 @@ export const Carousel = () => {
         </button>
       </div>
       {/* text container here */}
-      <div className="w-1/2 px-4 ml-2 lg:ml-10 mt-7 md:mt-0 left-0 absolute drop-shadow-lg text-white rounded-lg">
-        <h1 className="lg:text-3xl mb-3">
-          <TypewriterEffect words={words.map((text) => ({ text }))} />
+      <div className="w-1/2 px-4 ml-2 lg:ml-10 mt-7 md:mt-0 text-white left-0 absolute drop-shadow-lg  rounded-lg">
+        <h1 className="lg:text-3xl mb-3 font-bold text-purple-300">
+          {/* Typewriter effect for the title */}
+          <Typewriter
+            options={{
+              strings: [sliders[currentSlider].title],
+              autoStart: true,
+              loop: true,
+            }}
+          />
         </h1>
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg">
-          {/* <TextGenerateEffect words={word.map((text) => ({ text }))} /> */}
-          <TextGenerateEffect words={sliders[currentSlider].des} />
+        <p className="text-xs sm:text-sm md:text-base text-justify text-sky-200 ">
+          {sliders[currentSlider].des}
         </p>
+        
 
         <button
           type="button"

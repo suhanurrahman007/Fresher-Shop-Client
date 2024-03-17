@@ -13,12 +13,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme = "light">
-      <body className={inter.className}>
+    <html lang="en" data-theme="light">
+      <body className={`bg-[#010313] ${inter.className}`}>
         <TanStackProvider>
           <AuthProvider>
-              {children}
-              <Toaster />
+            {children}
+            <Toaster />
           </AuthProvider>
         </TanStackProvider>
       </body>

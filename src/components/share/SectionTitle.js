@@ -1,6 +1,6 @@
 const SectionTitle = ({ header, miniHeader }) => {
   return (
-    <div className="flex flex-col space-y-2 justify-center items-center py-12">
+    <div className="flex flex-col space-y-2 justify-center items-center py-5">
       <p className="text-xl">
         --- <span className="text-blue-600">{miniHeader}</span> ---
       </p>

@@ -63,16 +63,16 @@ const MyProfile = () => {
           <div className="badge mt-2 badge-accent badge-outline">User</div>
           <h2 className="py-5">
             <span className="font-bold mr-2">User Id:</span>
-            <span className="text-md text-purple-400">{user?.uid}</span>
+            {user ? <span className="text-md text-purple-400">{user?.uid}</span> : " "}
           </h2>
           <div className="grid lg:grid-cols-3 gap-5 justify-center">
             <div className="space-y-2">
               <p className="font-bold">Name</p>
-              <p className="text-xs text-purple-400">{user?.displayName}</p>
+              {user ? <p className="text-xs text-purple-400">{user?.displayName}</p> : " "}
             </div>
             <div className="space-y-2">
               <p className="font-bold">Email:</p>
-              <p className="text-xs text-purple-400">{user?.email}</p>
+              {user ? <p className="text-xs text-purple-400">{user?.email}</p> : " "}
             </div>
             <div className="space-y-2">
               <button className="text-white text-xs mr-2 font-bold py-2 px-5 rounded border border-purple-700  hover:bg-purple-700">

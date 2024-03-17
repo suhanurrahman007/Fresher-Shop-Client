@@ -3,6 +3,7 @@
 import Faq from "@/components/HomeDesign/Faq/Faq";
 import LatestProducts from "@/components/HomeDesign/LatestProducts/LatestProducts";
 import OurTeams from "@/components/HomeDesign/OurTeam/OurTeam";
+import Testimonial from "@/components/HomeDesign/Testimonial/Testimonial";
 import { Carousel } from "@/components/share/Carousel/Carousel";
 import Footer from "@/components/share/Footer/Footer";
 import Navbar from "@/components/share/Navbar/Navbar";
@@ -20,6 +21,7 @@ const HomePage = () => {
                 <LatestProducts />
                 <Faq />
                 <OurTeams />
+                <Testimonial />
                 {/* <Accordion4 /> */}
                 <Footer />
             </div> 

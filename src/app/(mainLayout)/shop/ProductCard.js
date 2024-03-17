@@ -4,7 +4,7 @@ import { BsInfoCircle } from "react-icons/bs";
 const ProductCard = ({ item }) => {
   return (
     <div className="max-w-[350px] transition-transform duration-300 transform hover:scale-105">
-      <div className="pb-4 shadow-lg font-sans rounded-xl space-y-4 mx-auto bg-white">
+      <div className="pb-4 shadow-lg font-sans rounded-xl space-y-4 mx-auto bg-[#0D0D21]">
         <div className="flex justify-center w-full h-48 lg:h-[200px] relative">
           <div className="flex justify-between items-center left-4 right-4 top-4 absolute">
             <div className="flex items-center">
@@ -51,13 +51,13 @@ const ProductCard = ({ item }) => {
           <p className="text-gray-400 text-sm font-semibold">{item?.brand}</p>
         </div>
         <div className="flex items-center justify-center flex-wrap gap-6 text-sm md:text-base">
-          <button className="duration-300 border border-purple-700 text-purple-700 hover:scale-105 hover:text-white font-bold py-2 px-4 rounded hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-700">
-            <BsInfoCircle className="mr-1" />
+          <button className="duration-300 border border-purple-700 text-purple-700 hover:scale-105 hover:text-white font-bold py-[5px] px-4 rounded hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-700">
+            <BsInfoCircle className="" />
           </button>
 
           <button className="flex items-center ">
             <svg
-              width={35}
+              width={25}
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const ProductCard = ({ item }) => {
                 ></path>
               </g>
             </svg>
-            <span className="text-[#c7c7c5]">Add to Cart</span>
+            <span className="text-[#c7c7c5] text-sm">Add to Cart</span>
           </button>
         </div>
       </div>
