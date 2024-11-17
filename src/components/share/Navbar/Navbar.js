@@ -75,7 +75,7 @@ const Navbar = () => {
             }`}
           >
             <span className="mr-1">
-              <FaServicestack />
+              <FaServicestack className="text-red-700" />
             </span>
             Service
           </span>
@@ -91,7 +91,7 @@ const Navbar = () => {
             }`}
           >
             <span className="mr-1">
-              <MdCalculate />
+              <MdCalculate className="text-purple-700" />
             </span>
             Contact Us
           </span>

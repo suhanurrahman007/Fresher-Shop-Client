@@ -1,11 +1,27 @@
-// next.config.js
+// // next.config.js
 
-module.exports = {
+// module.exports = {
+//   images: {
+//     domains: [
+//       "i.ibb.co",
+//       "lh3.googleusercontent.com",
+//       "source.unsplash.com",
+//     ],
+//   },
+// };
+
+
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
   images: {
-    domains: [
-      "i.ibb.co",
-      "lh3.googleusercontent.com",
-      "source.unsplash.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
   },
 };
+
+module.exports = nextConfig;

@@ -5,8 +5,10 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import useAuth from "@/components/hooks/useAuth";
 import Link from "next/link";
+import usePublicAxios from "@/components/hooks/usePublicAxios";
 
 const Login = () => {
+  const publicAxios = usePublicAxios();
   const {
     register,
     handleSubmit,
@@ -29,23 +31,20 @@ const Login = () => {
       });
   };
 
-  const onGoogleSubmit = () => {
-    googleUser()
+  const onGoogleSubmit = async () => {
+    await googleUser()
       .then((result) => {
-        console.log(result.user);
-        toast.success("Successfully Login");
-        router.push("/");
+        console.log(result.user.displayName);
+        const userInfo = {
+          name: result?.user?.displayName,
+          email: result?.user?.email,
+        };
 
-        // const userInfo = {
-        //   name: result?.user?.displayName,
-        //   email: result?.user?.email,
-        // };
-
-        // publicAxios.post("/users", userInfo).then((res) => {
-        //   console.log(res.data);
-        //   toast.success("Successfully Login");
-        //   router.push("/")
-        // });
+        publicAxios.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+          toast.success("Successfully Login");
+          router.push("/");
+        });
       })
       .catch((error) => {
         console.log(error.message);

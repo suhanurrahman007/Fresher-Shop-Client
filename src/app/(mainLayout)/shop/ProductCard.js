@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BsInfoCircle } from "react-icons/bs";
 
 const ProductCard = ({ item }) => {
@@ -51,9 +52,12 @@ const ProductCard = ({ item }) => {
           <p className="text-gray-400 text-sm font-semibold">{item?.brand}</p>
         </div>
         <div className="flex items-center justify-center flex-wrap gap-6 text-sm md:text-base">
-          <button className="duration-300 border border-purple-700 text-purple-700 hover:scale-105 hover:text-white font-bold py-[5px] px-4 rounded hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-700">
+          <Link
+            href={`/shop/${item?._id}`}
+            className="duration-300 border border-purple-700 text-purple-700 hover:scale-105 hover:text-white font-bold py-[5px] px-4 rounded hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-700"
+          >
             <BsInfoCircle className="" />
-          </button>
+          </Link>
 
           <button className="flex items-center ">
             <svg

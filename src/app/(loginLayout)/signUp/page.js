@@ -7,9 +7,11 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import useAuth from "@/components/hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
+import usePublicAxios from "@/components/hooks/usePublicAxios";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const publicAxios = usePublicAxios();
   const {
     register,
     handleSubmit,
@@ -25,20 +27,18 @@ const SignUp = () => {
     await createUser(data?.email, data?.password);
     await updateUserProfile(data?.name)
       .then((result) => {
-        console.log(result?.user);
-        toast.success("Successfully Sign Up");
-        router.push("/");
+        console.log(result?.name);
+        
+        const userInfo = {
+          name: data?.name,
+          email: data?.email,
+        };
 
-        // const userInfo = {
-        //   name: data?.name,
-        //   email: data?.email,
-        // };
-
-        // publicAxios.post("/users", userInfo).then((res) => {
-        //   console.log(res.data);
-        // toast.success("Successfully Sign Up");
-        // router.push("/")
-        // });
+        publicAxios.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+          toast.success("Successfully Sign Up");
+          router.push("/");
+        });
       })
       .catch((error) => {
         console.log(error?.message);
