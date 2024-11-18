@@ -15,6 +15,7 @@ import Loading from "@/app/loading";
 import { BsBookmarkPlusFill } from "react-icons/bs";
 import ProductDescription from "./ProductDescription";
 import Link from "next/link";
+import OrderCard from "./OrderCard";
 
 const ProductDetails = ({ params }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -31,7 +32,7 @@ const ProductDetails = ({ params }) => {
         (findProduct.price * findProduct.discount_price) / 100
       : findProduct?.price;
   console.log(discountPrice);
-
+  
   return (
     <Container>
       <div className="mt-[77px]">
@@ -89,10 +90,10 @@ const ProductDetails = ({ params }) => {
                 <ProductDescription findProduct={findProduct} />
                 <p>
                   <span className="text-gray-700 mr-4 line-through">
-                    ${findProduct?.price}
+                    ${findProduct?.price?.toFixed(2)}
                   </span>
                   <span className="font-bold mr-2 text-purple-600">
-                    ${discountPrice ? discountPrice : "00"}
+                    ${discountPrice ? discountPrice?.toFixed(2) : "00"}
                   </span>
                   Per Piece
                 </p>
@@ -108,12 +109,7 @@ const ProductDetails = ({ params }) => {
             </div>
           </div>
           <div className="lg:col-span-3">
-            <Link
-              href={`/payment`}
-              className="duration-300 border border-purple-700 text-purple-700 hover:scale-105 hover:text-white font-bold py-[5px] px-4 rounded hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-700"
-            >
-              Payment
-            </Link>
+            <OrderCard discountPrice={discountPrice} order={findProduct} />
           </div>
         </div>
       </div>
