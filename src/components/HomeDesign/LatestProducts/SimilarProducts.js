@@ -1,23 +1,43 @@
 "use client";
+import useLatestProducts from "@/components/hooks/useLatestProducts";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import Container from "@/components/share/Container";
 import ProductCard from "@/app/(mainLayout)/shop/ProductCard";
-import useLatestProducts from "@/components/hooks/useLatestProducts";
+import useProducts from "@/components/hooks/useProducts";
+import Loading from "@/app/loading";
+import SectionTitle from "@/components/share/SectionTitle";
 
-const LatestProducts = () => {
-  const [latestProducts] = useLatestProducts();
-  console.log(latestProducts);
+const SimilarProducts = ({ category }) => {
+  const [products, refetch, isLoading] = useProducts();
+  
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  // Filter products based on the provided category
+  const similarProducts = products?.filter(
+    (item) => item?.category === category
+  );
+
+  if (!similarProducts || similarProducts.length === 0) {
+    return (
+      <Container>
+        <p>No similar products available.</p>
+      </Container>
+    );
+  }
+
   return (
     <div>
       <Container>
-        <div className="text-2xl font-extrabold text-purple-300 mt-8">
-          <h2>Latest Products</h2>
-        </div>
-
-        <div>
+        <SectionTitle
+          header={"Similar Products"}
+          miniHeader={"You might also like these items"}
+        />
+        <div className="my-7">
           <Swiper
             slidesPerView={4}
             spaceBetween={30}
@@ -45,7 +65,7 @@ const LatestProducts = () => {
               },
             }}
           >
-            {latestProducts?.map((item) => (
+            {similarProducts?.map((item) => (
               <SwiperSlide key={item?._id}>
                 <ProductCard item={item} />
               </SwiperSlide>
@@ -57,4 +77,4 @@ const LatestProducts = () => {
   );
 };
 
-export default LatestProducts;
+export default SimilarProducts;

@@ -23,7 +23,7 @@ const ContactUs = () => {
 
     emailjs
       .sendForm(
-        "service_opj16yj",
+        "service_627rdn8",
         "template_ygwtf75",
         form.current,
         "MAnAmkEBH4a46_FDY"
@@ -36,7 +36,7 @@ const ContactUs = () => {
         },
         (error) => {
           console.log(error.text);
-          toast.success("Error, Please try again later");
+          toast.error("Error, Please try again later");
         }
       );
   };
@@ -102,7 +102,7 @@ const ContactUs = () => {
             <span className="font-bold mr-2 text-2xl text-blue-700">
               <MdMarkEmailRead></MdMarkEmailRead>{" "}
             </span>{" "}
-            suhanur35-448@diu.edu.bd
+            oneyeareducation@gmail.com
           </p>
           <p className="flex items-center py-3 text-sm text-gray-300 hover:text-blue-700 hover:underline">
             <span className="font-bold mr-2 text-2xl text-green-600">

@@ -6,6 +6,7 @@ import Container from "@/components/share/Container";
 import useProducts from "@/components/hooks/useProducts";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import ProductCard from "./ProductCard";
+import ContactUs from "../contactUs/page";
 
 const Shop = () => {
   const [products, refetch] = useProducts();
@@ -218,6 +219,8 @@ const Shop = () => {
           </TabPanel>
         </Tabs>
       </Container>
+
+      <ContactUs />
     </div>
   );
 };
