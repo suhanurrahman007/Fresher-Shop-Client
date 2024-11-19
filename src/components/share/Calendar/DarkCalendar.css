@@ -1,0 +1,77 @@
+/* Overall Calendar Styles */
+.dark-calendar {
+  background-color: #1e1e2f; /* Dark background */
+  color: #ffffff; /* Light text */
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+/* Navigation Bar (Month/Year) */
+.dark-calendar .react-calendar__navigation {
+  background-color: #2a2a3e;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.dark-calendar .react-calendar__navigation button {
+  color: #ffffff;
+  font-weight: bold;
+  background: none;
+  border: none;
+}
+
+.dark-calendar .react-calendar__navigation button:hover {
+  background-color: #3b3b52;
+  border-radius: 5px;
+}
+
+/* Date Tiles */
+.dark-calendar .react-calendar__tile {
+  background-color: #2a2a3e;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.dark-calendar .react-calendar__tile:hover {
+  background-color: #3b3b52; /* Hover effect */
+}
+
+.dark-calendar .react-calendar__tile--active {
+  background-color: #6a5acd; /* Active date color */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Weekday and Header Labels */
+.dark-calendar .react-calendar__month-view__weekdays {
+  background-color: #2a2a3e;
+  color: #b0b0d9;
+}
+
+.dark-calendar .react-calendar__month-view__weekdays__weekday {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Other Month Dates (Grayed Out) */
+.dark-calendar .react-calendar__tile--now {
+  background-color: #4b0082;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.dark-calendar .react-calendar__tile--disabled {
+  color: #64647a;
+}
+
+/* Highlight Range for Select Range Option */
+.dark-calendar .react-calendar__tile--range {
+  background-color: #6a5acd;
+  color: #ffffff;
+}
+
+.dark-calendar .react-calendar__tile--range:hover {
+  background-color: #836fff;
+}

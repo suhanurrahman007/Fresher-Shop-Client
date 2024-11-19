@@ -22,10 +22,12 @@ import { usePathname } from "next/navigation";
 import "@/components/share/Navbar/Dashboard.css";
 import useAuth from "@/components/hooks/useAuth";
 import Image from "next/image";
+import useUser from "@/components/hooks/useUser";
 
 const DashboardLayout = ({ children }) => {
   const { user, logout } = useAuth();
 
+  const [users] = useUser();
   const pathname = usePathname();
 
   const handleLogOut = () => {
@@ -296,10 +298,10 @@ const DashboardLayout = ({ children }) => {
               <div className="divider"></div>
               <div>{UserSidebarLinks}</div>
               <div className="divider"></div>
-              {/* {users?.role === "admin" ? AdminSidebarLinks : ""}
+              {users?.role === "admin" ? AdminSidebarLinks : ""}
               <div className="divider"></div>
               {users?.role === "admin" ? deliverySidebarLinks : ""}
-              <div className="divider"></div> */}
+              <div className="divider"></div>
             </div>
             <div>
               <li>
