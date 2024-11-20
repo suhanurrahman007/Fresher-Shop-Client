@@ -1,0 +1,63 @@
+[
+    {
+      "brand_name": "Coleman",
+      "brand_description": "Coleman is a leading brand in outdoor recreation, providing camping gear, coolers, stoves, tents, and more. Their products are known for their reliability and durability.",
+      "brand_image": "https://i.ibb.co.com/XyNq4Q7/Coleman-Lantern-HDR.jpg"
+    },
+    {
+      "brand_name": "The North Face",
+      "brand_description": "The North Face specializes in outdoor clothing and equipment, with a focus on innovation and performance for climbers, hikers, and adventurers.",
+      "brand_image": "https://i.ibb.co.com/25DZxGh/north-face.webp"
+    },
+    {
+      "brand_name": "REI Co-op",
+      "brand_description": "REI offers high-quality outdoor gear and apparel for camping, hiking, and cycling, promoting sustainability and the joy of outdoor exploration.",
+      "brand_image": "https://i.ibb.co.com/HKv0S8C/a346da53489299-593690c0af692.jpg"
+    },
+    {
+      "brand_name": "Osprey",
+      "brand_description": "Osprey is known for creating premium backpacks and gear designed for backpackers and outdoor adventurers, with a focus on comfort and functionality.",
+      "brand_image": "https://i.ibb.co.com/S068QZ1/ff.jpg"
+    },
+    {
+      "brand_name": "Black Diamond",
+      "brand_description": "Black Diamond is a respected brand in climbing and skiing, known for its innovative and reliable products, including harnesses, helmets, and poles.",
+      "brand_image": "https://i.ibb.co.com/25DZxGh/north-face.webp"
+    },
+    {
+      "brand_name": "Patagonia",
+      "brand_description": "Patagonia is a global outdoor brand that prioritizes environmental responsibility, offering sustainable clothing and outdoor equipment for climbers, skiers, and hikers.",
+      "brand_image": "https://i.ibb.co.com/HKv0S8C/a346da53489299-593690c0af692.jpg"
+    },
+    {
+      "brand_name": "Garmin",
+      "brand_description": "Garmin is renowned for its high-performance GPS devices, wearables, and outdoor tech, catering to hikers, cyclists, and fitness enthusiasts.",
+      "brand_image": "https://i.ibb.co.com/S068QZ1/ff.jpg"
+    },
+    {
+      "brand_name": "Arc'teryx",
+      "brand_description": "Arc'teryx is a premium brand offering cutting-edge outdoor gear and apparel for mountaineers and skiers, known for its precision craftsmanship and functionality.",
+      "brand_image": "https://example.com/images/arcteryx-logo.pnghttps://i.ibb.co.com/HKv0S8C/a346da53489299-593690c0af692.jpg"
+    },
+    {
+      "brand_name": "Yeti",
+      "brand_description": "Yeti creates durable, high-performance coolers, drinkware, and gear that are designed to withstand harsh conditions, making it a favorite among outdoor enthusiasts.",
+      "brand_image": "https://i.ibb.co.com/25DZxGh/north-face.webp"
+    },
+    {
+      "brand_name": "Marmot",
+      "brand_description": "Marmot produces top-quality outdoor apparel and gear, with a focus on creating performance-driven clothing for hiking, camping, and climbing.",
+      "brand_image": "https://i.ibb.co.com/XyNq4Q7/Coleman-Lantern-HDR.jpg"
+    },
+    {
+      "brand_name": "MSR (Mountain Safety Research)",
+      "brand_description": "MSR is a leader in outdoor equipment, including tents, stoves, and water filters, focusing on innovative and reliable solutions for backcountry adventurers.",
+      "brand_image": "https://i.ibb.co.com/S068QZ1/ff.jpg"
+    },
+    {
+      "brand_name": "Hydro Flask",
+      "brand_description": "Hydro Flask is a brand known for its insulated drinkware and hydration solutions, offering premium water bottles that keep drinks hot or cold for hours.",
+      "brand_image": "https://i.ibb.co.com/HKv0S8C/a346da53489299-593690c0af692.jpg"
+    }
+  ]
+

@@ -66,10 +66,10 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link href="/service">
+        <Link href="/brand">
           <span
             className={`nav-link ${
-              pathname === "/service"
+              pathname === "/brand"
                 ? "active"
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
             }`}
@@ -77,7 +77,7 @@ const Navbar = () => {
             <span className="mr-1">
               <FaServicestack className="text-red-700" />
             </span>
-            Service
+            Our Brand
           </span>
         </Link>
       </li>
