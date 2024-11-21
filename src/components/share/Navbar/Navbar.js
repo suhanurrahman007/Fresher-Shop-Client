@@ -34,22 +34,6 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link href="/about">
-          <span
-            className={`nav-link ${
-              pathname === "/about"
-                ? "active"
-                : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
-            }`}
-          >
-            <span className="mr-1">
-              <FaUserTag />
-            </span>
-            About Us
-          </span>
-        </Link>
-      </li>
-      <li>
         <Link href="/shop">
           <span
             className={`nav-link ${
@@ -82,22 +66,6 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link href="/contactUs">
-          <span
-            className={`nav-link ${
-              pathname === "/contactUs"
-                ? "active"
-                : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
-            }`}
-          >
-            <span className="mr-1">
-              <MdCalculate className="text-purple-700" />
-            </span>
-            Contact Us
-          </span>
-        </Link>
-      </li>
-      <li>
         <Link href="/blog">
           <span
             className={`nav-link ${
@@ -110,6 +78,39 @@ const Navbar = () => {
               <FaBlog />
             </span>
             Blog
+          </span>
+        </Link>
+      </li>
+      <li>
+        <Link href="/support">
+          <span
+            className={`nav-link ${
+              pathname === "/support"
+                ? "active"
+                : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
+            }`}
+          >
+            <span className="mr-1">
+              <FaUserTag />
+            </span>
+            Help & Support
+          </span>
+        </Link>
+      </li>
+
+      <li>
+        <Link href="/contactUs">
+          <span
+            className={`nav-link ${
+              pathname === "/contactUs"
+                ? "active"
+                : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
+            }`}
+          >
+            <span className="mr-1">
+              <MdCalculate className="text-purple-700" />
+            </span>
+            Contact Us
           </span>
         </Link>
       </li>

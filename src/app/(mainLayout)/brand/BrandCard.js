@@ -11,7 +11,7 @@ export function BrandCard({ item }) {
   return (
     <div className="max-w-xs w-full group/card">
       <div
-        className={`cursor-pointer overflow-hidden relative card h-80 rounded-md shadow-xl max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4`}
+        className={`cursor-pointer overflow-hidden relative card h-72 rounded-md shadow-xl max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4`}
         style={{
           backgroundImage: `url(${
             item?.brand_image || "https://via.placeholder.com/500"
