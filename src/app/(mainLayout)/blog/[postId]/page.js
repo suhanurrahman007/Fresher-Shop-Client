@@ -21,9 +21,13 @@ import usePublicAxios from "@/components/hooks/usePublicAxios";
 import { useForm } from "react-hook-form";
 import useComments from "@/components/hooks/useComments";
 import DarkCalendar from "@/components/share/Calendar/Calendar";
-import { BottomGradient, LabelInputContainer } from "@/app/dashboard/(admin)/addPost/page";
+import {
+  BottomGradient,
+  LabelInputContainer,
+} from "@/app/dashboard/(admin)/addPost/page";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { CommentCard } from "./CommentCard";
 
 const BlogDetails = ({ params }) => {
   const publicAxios = usePublicAxios();
@@ -34,14 +38,12 @@ const BlogDetails = ({ params }) => {
   const { user } = useAuth();
 
   const [comments, refetch] = useComments();
-
-  const filterComments = comments?.filter(
-    (item) => item?.postId === params?.postId
-  );
+  const findPost = posts?.find((item) => item?._id === params?.postId) || {};
+  const filterComments =
+    comments?.filter((item) => item?.postId === params?.postId) || [];
 
   console.log(filterComments);
 
-  const findPost = posts?.find((item) => item?._id === params?.postId);
   const [value, onChange] = useState(new Date());
 
   const { register, handleSubmit } = useForm();
@@ -54,6 +56,7 @@ const BlogDetails = ({ params }) => {
       image: user?.photoURL,
       comment: data?.comment,
       postId: params?.postId,
+      like: 0
     };
     console.log(commentInfo);
 
@@ -176,49 +179,7 @@ const BlogDetails = ({ params }) => {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 gap-5">
-                  {filterComments?.map((item) => (
-                    <div key={item?._id} className="hero bg-[#000C21] gap-5">
-                      <div className="hero-content">
-                        <div>
-                          {item?.image ? (
-                          <Image
-                            className="rounded-full w-28 h-28"
-                            src={item?.image}
-                            alt="images"
-                            width={110}
-                            height={120}
-                          ></Image>
-                        ) : (
-                          <Image
-                            className="rounded-full w-28 h-28"
-                            src={profileImg}
-                            alt="images"
-                            width={110}
-                            height={120}
-                          ></Image>
-                        )}
-                        </div>
-                        <div className="space-y-2 ">
-                          {/* <p className="text-gray-500 font-semibold text-sm">About</p> */}
-                          <p className="text-md text-gray-500 text-justify">
-                            by
-                            <span className="text-blue-600 font-bold ml-2 mr-2">
-                              {item?.name ? item?.name : "Unknown User"}
-                            </span>{" "}
-                            | Posted{" "}
-                            <span className="text-blue-600 ml-2">
-                              {item?.time}
-                            </span>
-                          </p>
-                          <p className="text-xs text-justify text-gray-400">
-                            {item?.comment}
-                          </p>
-
-                          <button className="text-red-800">Reply</button>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                  <CommentCard cards={filterComments} refetch={refetch} />
                 </div>
               )}
             </div>
