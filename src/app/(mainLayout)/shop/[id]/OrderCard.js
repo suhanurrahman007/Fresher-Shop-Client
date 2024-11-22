@@ -116,7 +116,10 @@ const OrderCard = ({ discountPrice, order }) => {
             ))}
           </ul>
           <div className="flex justify-center pt-4">
-            <OrderModal order={order} />
+            <OrderModal
+              totalPrice={order.price}
+              discountPrice={discountPrice}
+            />
           </div>
         </div>
       </div>

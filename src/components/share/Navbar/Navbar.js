@@ -2,7 +2,13 @@
 import useAuth from "@/components/hooks/useAuth";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaHome, FaUserTag, FaServicestack, FaBlog } from "react-icons/fa";
+import {
+  FaHome,
+  FaUserTag,
+  FaServicestack,
+  FaBlog,
+  FaCartArrowDown,
+} from "react-icons/fa";
 import { BiLogOut, BiSolidDashboard } from "react-icons/bi";
 import { MdLogin, MdCalculate } from "react-icons/md";
 import { FaShopify } from "react-icons/fa";
@@ -11,6 +17,7 @@ import Image from "next/image";
 import logo from "@/assets/Logo.png";
 import avatar from "@/assets/avatar.png";
 import toast from "react-hot-toast";
+import { CartShop } from "./CartIcon";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -114,6 +121,20 @@ const Navbar = () => {
           </span>
         </Link>
       </li>
+
+      <li>
+        <Link href="/cart">
+          <span
+            className={`nav-link ${
+              pathname === "/cart"
+                ? "active"
+                : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
+            }`}
+          >
+            <CartShop />
+          </span>
+        </Link>
+      </li>
     </>
   );
 
@@ -147,7 +168,20 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
-        <div className="flex-1 justify-end lg:justify-start">
+        <div className="flex-1 justify-end lg:justify-start items-center">
+          <li className="lg:hidden">
+            <Link href="/cart">
+              <span
+                className={`nav-link ${
+                  pathname === "/cart"
+                    ? "active"
+                    : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
+                }`}
+              >
+                <CartShop />
+              </span>
+            </Link>
+          </li>
           <Link href={"/"}>
             <Image
               className="w-20 ml-7 cursor-pointer hover:scale-110 delay-150 duration-300 ease-in-out"

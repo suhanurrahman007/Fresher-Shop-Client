@@ -20,12 +20,20 @@ import LoveRating from "./Rating";
 import LatestProducts from "@/components/HomeDesign/LatestProducts/LatestProducts";
 import SimilarProducts from "@/components/HomeDesign/LatestProducts/SimilarProducts";
 import Testimonial from "@/components/HomeDesign/Testimonial/Testimonial";
+import usePublicAxios from "@/components/hooks/usePublicAxios";
+import useUser from "@/components/hooks/useUser";
+import toast from "react-hot-toast";
+import useCart from "@/components/hooks/useCart";
 
 const ProductDetails = ({ params }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const publicAxios = usePublicAxios();
+  const [user] = useUser();
+
   const { id } = params;
-  const [products, refetch] = useProducts();
+  const [products] = useProducts();
   const findProduct = products?.find((item) => item?._id === id);
+  const [cart, refetch] = useCart();
 
   if (!findProduct) {
     return <Loading />;
@@ -36,6 +44,28 @@ const ProductDetails = ({ params }) => {
         (findProduct.price * findProduct.discount_price) / 100
       : findProduct?.price;
 
+  const carts = {
+    customerName: user?.name,
+    customerEmail: user?.email,
+    productId: findProduct?._id,
+    discount_price: findProduct?.discount_price,
+    productPrice: findProduct?.price,
+    productName: findProduct?.product_name,
+    productImage: findProduct?.image,
+    productCategory: findProduct?.category,
+  };
+  const handleCart = async () => {
+    try {
+      const res = await publicAxios.post("/carts", carts);
+      if (res.data.insertedId) {
+        toast.success("Successfully added to Cart");
+        refetch();
+      }
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      toast.error("Failed to add to cart. Please try again.");
+    }
+  };
   return (
     <>
       <Container>
@@ -155,7 +185,10 @@ const ProductDetails = ({ params }) => {
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-6 text-sm md:text-base">
-                  <button className="text-sm box-border border-4 border-sky-900 w-48 h-12 rounded-lg bg-sky-600 text-white relative group">
+                  <button
+                    onClick={handleCart}
+                    className="text-sm box-border border-4 border-sky-900 w-48 h-12 rounded-lg bg-sky-600 text-white relative group"
+                  >
                     <span className="pr-8">Add to Bag</span>
                     <span className="bg-sky-900 absolute right-0 top-0  h-full flex items-center justify-center px-1 group-hover:duration-300 group-hover:w-full w-10 duration-300">
                       <BsBookmarkPlusFill />

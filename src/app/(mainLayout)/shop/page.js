@@ -7,9 +7,12 @@ import useProducts from "@/components/hooks/useProducts";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import ProductCard from "./ProductCard";
 import ContactUs from "../contactUs/page";
+import useCart from "@/components/hooks/useCart";
 
 const Shop = () => {
-  const [products, refetch] = useProducts();
+  const [products] = useProducts();
+  const [cart, refetch] = useCart()
+  
   const casual = products.filter((item) => item?.product_type === "casual");
   const accessories = products.filter(
     (item) => item?.product_type === "accessories"
@@ -107,7 +110,7 @@ const Shop = () => {
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mx-auto">
                 {getPageItems(products).map((item) => (
-                  <ProductCard item={item} key={item?._id} />
+                  <ProductCard item={item} key={item?._id} refetch={refetch} />
                 ))}
               </div>
             </div>
@@ -125,7 +128,7 @@ const Shop = () => {
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mx-auto">
                 {getPageItems(casual).map((item) => (
-                  <ProductCard item={item} key={item?._id} />
+                  <ProductCard item={item} key={item?._id} refetch={refetch} />
                 ))}
               </div>
             </div>
@@ -141,7 +144,7 @@ const Shop = () => {
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mx-auto">
                 {getPageItems(accessories).map((item) => (
-                  <ProductCard item={item} key={item?._id} />
+                  <ProductCard item={item} key={item?._id} refetch={refetch} />
                 ))}
               </div>
             </div>
@@ -157,7 +160,7 @@ const Shop = () => {
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mx-auto">
                 {getPageItems(sports).map((item) => (
-                  <ProductCard item={item} key={item?._id} />
+                  <ProductCard item={item} key={item?._id} refetch={refetch} />
                 ))}
               </div>
             </div>
@@ -173,7 +176,7 @@ const Shop = () => {
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mx-auto">
                 {getPageItems(home).map((item) => (
-                  <ProductCard item={item} key={item?._id} />
+                  <ProductCard item={item} key={item?._id} refetch={refetch} />
                 ))}
               </div>
             </div>
@@ -189,7 +192,7 @@ const Shop = () => {
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mx-auto">
                 {getPageItems(electronics).map((item) => (
-                  <ProductCard item={item} key={item?._id} />
+                  <ProductCard item={item} key={item?._id} refetch={refetch} />
                 ))}
               </div>
             </div>
@@ -205,7 +208,7 @@ const Shop = () => {
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mx-auto">
                 {getPageItems(personal_care).map((item) => (
-                  <ProductCard item={item} key={item?._id} />
+                  <ProductCard item={item} key={item?._id} refetch={refetch} />
                 ))}
               </div>
             </div>

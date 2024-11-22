@@ -1,8 +1,36 @@
+import usePublicAxios from "@/components/hooks/usePublicAxios";
+import useUser from "@/components/hooks/useUser";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 import { BsInfoCircle } from "react-icons/bs";
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ item, refetch }) => {
+  const [user] = useUser();
+  const publicAxios = usePublicAxios();
+  const cart = {
+    customerName: user?.name,
+    customerEmail: user?.email,
+    productId: item?._id,
+    discount_price: item?.discount_price,
+    productPrice: item?.price,
+    productName: item?.product_name,
+    productImage: item?.image,
+    productCategory: item?.category,
+  };
+  const handleCart = async () => {
+    try {
+      const res = await publicAxios.post("/carts", cart);
+      if (res.data.insertedId) {
+        toast.success("Successfully added to Cart");
+        refetch()
+      }
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      toast.error("Failed to add to cart. Please try again.");
+    }
+  };
+
   return (
     <div className="max-w-[350px] transition-transform duration-300 transform hover:scale-105">
       <div className="pb-4 shadow-lg font-sans rounded-xl space-y-4 mx-auto bg-[#0D0D21]">
@@ -59,7 +87,7 @@ const ProductCard = ({ item }) => {
             <BsInfoCircle className="" />
           </Link>
 
-          <button className="flex items-center ">
+          <button onClick={handleCart} className="flex items-center ">
             <svg
               width={25}
               viewBox="0 0 24 24"
