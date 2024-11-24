@@ -9,6 +9,7 @@ import Footer from "@/components/share/Footer/Footer";
 import Navbar from "@/components/share/Navbar/Navbar";
 import SideNavbar from "@/components/share/Navbar/SideNavbar";
 import ContactUs from "./(mainLayout)/contactUs/page";
+import ProductMenu from "@/components/HomeDesign/ProductMenu/ProductMenu";
 const HomePage = () => {
   return (
     <div>
@@ -19,6 +20,7 @@ const HomePage = () => {
                 <Navbar></Navbar>
                 {/* <!-- Page content here --> */}
                 <Carousel />
+                <ProductMenu />
                 <LatestProducts />
                 <Faq />
                 <OurTeams />

@@ -133,16 +133,16 @@ const DashboardLayout = ({ children }) => {
       </li>
 
       <li>
-        <Link Link href="/dashboard/parcelManage">
+        <Link Link href="/dashboard/productManage">
           <span
             className={`nav-link ${
-              pathname === "/dashboard/parcelManage"
+              pathname === "/dashboard/productManage"
                 ? "active"
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
             <FaBoxOpen></FaBoxOpen>
-            Parcels Manage
+            Product Manage
           </span>
         </Link>
       </li>
