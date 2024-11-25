@@ -3,30 +3,59 @@ import AddProduct from "@/components/Dashboard/Admin/Product/AddProduct";
 import ProductManagement from "@/components/Dashboard/Admin/Product/ProductManagement";
 import ProductNavbar from "@/components/Dashboard/Admin/Product/ProductNavbar";
 import useProducts from "@/components/hooks/useProducts";
-import React from "react";
+import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 const ProductManage = () => {
   const [products, refetch] = useProducts();
+  const [selectedTab, setSelectedTab] = useState(0); // Controlled tab state
+
   return (
     <div className="p-6 min-h-screen text-white">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Manage Products</h1>
+        <h1 className="text-2xl text-purple-300 font-bold">Products Manage</h1>
         <AddProduct refetch={refetch} />
       </div>
 
       {/* Tabs Section */}
-      <div className="rounded-lg shadow-lg p-4">
-        <Tabs>
+      <div className="rounded-lg shadow-lg p-4 bg-[#1a1a2eac]">
+        <Tabs
+          selectedIndex={selectedTab}
+          onSelect={(index) => setSelectedTab(index)}
+        >
           {/* Tab List */}
-          <TabList className="flex space-x-4 pb-2">
-            <Tab className="px-4 py-2 bg cursor-pointer text-gray-300 hover:text-white border-b-2 border-transparent hover:border-blue-500">
-              Produces
+          <TabList className="flex space-x-2 pb-2">
+            <Tab
+              className="font-bold py-1 px-2 text-xs rounded border border-purple-700 hover:bg-gradient-to-r from-blue-400 to-purple-500"
+              selectedClassName="bg-gradient-to-r from-blue-400 to-purple-500 text-white"
+            >
+              All Produces
             </Tab>
-            <Tab className="px-4 py-2 cursor-pointer text-gray-300 hover:text-white border-b-2 border-transparent hover:border-blue-500">
-              Title 2
+            <Tab
+              className="font-bold py-1 px-2 text-xs rounded border border-purple-700 hover:bg-gradient-to-r from-blue-400 to-purple-500"
+              selectedClassName="bg-gradient-to-r from-blue-400 to-purple-500 text-white"
+            >
+              Pricing Table
+            </Tab>
+            <Tab
+              className="font-bold py-1 px-2 text-xs rounded border border-purple-700 hover:bg-gradient-to-r from-blue-400 to-purple-500"
+              selectedClassName="bg-gradient-to-r from-blue-400 to-purple-500 text-white"
+            >
+              Shipping Rates
+            </Tab>
+            <Tab
+              className="font-bold py-1 px-2 text-xs rounded border border-purple-700 hover:bg-gradient-to-r from-blue-400 to-purple-500"
+              selectedClassName="bg-gradient-to-r from-blue-400 to-purple-500 text-white"
+            >
+              Tax Rates
+            </Tab>
+            <Tab
+              className="font-bold py-1 px-2 text-xs rounded border border-purple-700 hover:bg-gradient-to-r from-blue-400 to-purple-500"
+              selectedClassName="bg-gradient-to-r from-blue-400 to-purple-500 text-white"
+            >
+              Category Table
             </Tab>
           </TabList>
 
@@ -38,9 +67,19 @@ const ProductManage = () => {
             <ProductManagement products={products} refetch={refetch} />
           </TabPanel>
           <TabPanel className="mt-4">
-            <h2 className="text-lg font-medium">Any content 2</h2>
-            <p className="text-gray-400 mt-2">
-              Here is some placeholder content for Tab 2.
+            <p className="text-gray-300">Pricing Table content will go here.</p>
+          </TabPanel>
+          <TabPanel className="mt-4">
+            <p className="text-gray-300">
+              Shipping Rates content will go here.
+            </p>
+          </TabPanel>
+          <TabPanel className="mt-4">
+            <p className="text-gray-300">Tax Rates content will go here.</p>
+          </TabPanel>
+          <TabPanel className="mt-4">
+            <p className="text-gray-300">
+              Category Table content will go here.
             </p>
           </TabPanel>
         </Tabs>

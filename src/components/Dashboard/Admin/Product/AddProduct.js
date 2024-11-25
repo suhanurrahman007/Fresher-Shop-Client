@@ -9,33 +9,13 @@ import { useForm } from "react-hook-form";
 import { FaPlus } from "react-icons/fa";
 import { Select } from "@/components/ui/select";
 import toast from "react-hot-toast";
+import { categoryOptions, productTypeOptions } from "./ProductConstant";
 
 export default function AddProduct({ refetch }) {
   const [openModal, setOpenModal] = useState(false);
   const publicAxios = usePublicAxios();
 
-  // Define category and product type options
-  const categoryOptions = [
-    "Air Cargo News",
-    "Distribution/Materials",
-    "Logistics Planner",
-    "Supply Chain Research",
-    "Transport Digest",
-    "World Expert Insight",
-  ];
 
-  const productTypeOptions = [
-    "Groceries",
-    "Beverages",
-    "Fresh Produce",
-    "Frozen Foods",
-    "Health & Wellness",
-    "Personal Care",
-    "Household Items",
-    "Snacks & Confectionery",
-    "Baby Care",
-    "Pet Supplies",
-  ];
 
   const {
     register,
@@ -48,12 +28,13 @@ export default function AddProduct({ refetch }) {
     const productInfo = {
       product_name: data?.name,
       brand: data?.brand,
-      price: data?.price,
-      discount_price: data?.discount_price,
+      price: parseFloat(data?.price),
+      discount_price: parseFloat(data?.discount_price),
       product_type: data?.product_type,
       description: data?.description,
       category: data?.category,
       image: data?.image,
+      status: "Inactive",
     };
 
     console.log(productInfo);
@@ -79,7 +60,7 @@ export default function AddProduct({ refetch }) {
       {/* Add Product Button */}
       <button
         onClick={() => setOpenModal(true)}
-        className="relative text-xl border-4 border-sky-900 w-48 h-12 rounded-lg bg-sky-600 text-white group"
+        className="relative text-xl border-4 border-sky-900 w-48 h-11 rounded-lg bg-sky-600 text-white group"
       >
         <span className="pr-8 text-sm">Add Product</span>
         <span className="absolute right-0 top-0 h-full flex items-center justify-center w-10 bg-sky-900 group-hover:w-full transition-all duration-300">
@@ -225,7 +206,7 @@ export default function AddProduct({ refetch }) {
                         <option disabled value="default">
                           Select a Category
                         </option>
-                        {categoryOptions.map((category) => (
+                        {categoryOptions?.map((category) => (
                           <option key={category} value={category}>
                             {category}
                           </option>
@@ -248,7 +229,7 @@ export default function AddProduct({ refetch }) {
                         <option disabled value="default">
                           Select a Product Type
                         </option>
-                        {productTypeOptions.map((type) => (
+                        {productTypeOptions?.map((type) => (
                           <option key={type} value={type}>
                             {type}
                           </option>

@@ -28,6 +28,9 @@ module.exports = {
           "100%": { transform: "translateX(200px)" },
         },
       },
+      colors: {
+        customDark: "#0D0D21", // Add a named color for convenience
+      },
     },
   },
   plugins: [require("daisyui"), addVariablesForColors],

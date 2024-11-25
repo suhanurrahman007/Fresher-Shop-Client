@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BsThreeDots } from "react-icons/bs";
+import DotButton from "./DotButton";
 
 const ProductManagement = ({ products, refetch }) => {
   console.log(products);
@@ -7,12 +8,14 @@ const ProductManagement = ({ products, refetch }) => {
     <div>
       <div className="overflow-x-auto ">
         <table className="w-full shadow-md  mx-auto  my-6">
-          <thead>
-            <tr className="bg-[#0D0D21] text-white">
+          <thead className="sticky top-0 z-10">
+            <tr className="bg-[#0D0D21] text-purple-400">
               <th className="py-3 px-6 text-left">Product</th>
               <th className="py-3 px-6 text-left">Price</th>
+              <th className="py-3 px-6 text-left">Status</th>
               <th className="py-3 px-6 text-left">Product Type</th>
               <th className="py-3 px-6  text-left">Create At</th>
+              <th className="py-3 px-6  text-left"></th>
             </tr>
           </thead>
           <tbody>
@@ -50,6 +53,9 @@ const ProductManagement = ({ products, refetch }) => {
                   {item?.price}
                 </td>
                 <td className="py-4 px-6 border-b border-b-gray-800">
+                  {item?.status ? item?.status : "Default"}
+                </td>
+                <td className="py-4 px-6 border-b border-b-gray-800">
                   {item?.product_type?.split(" ").slice(0, 1).join(" ")}
                 </td>
                 <td className="py-4 px-6 border-b border-b-gray-800">
@@ -63,7 +69,7 @@ const ProductManagement = ({ products, refetch }) => {
                   })}
                 </td>
                 <td className="py-4 px-6 border-b border-b-gray-800 text-end">
-                  <BsThreeDots />
+                  <DotButton productId={item?._id} refetch={refetch}/>
                 </td>
               </tr>
             ))}

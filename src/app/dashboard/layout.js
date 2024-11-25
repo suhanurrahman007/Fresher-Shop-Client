@@ -133,7 +133,7 @@ const DashboardLayout = ({ children }) => {
       </li>
 
       <li>
-        <Link Link href="/dashboard/productManage">
+        <Link href="/dashboard/productManage">
           <span
             className={`nav-link ${
               pathname === "/dashboard/productManage"
