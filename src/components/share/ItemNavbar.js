@@ -1,27 +1,25 @@
 import { Input } from '@/components/ui/input';
 import React from 'react';
 import { IoIosListBox, IoIosSearch } from "react-icons/io";
-import TooltipRight from './TooltipRight';
-import useProducts from '@/components/hooks/useProducts';
-import BasicSelect from './BasicSelect';
-const ProductNavbar = () => {
-    const [products] = useProducts()
+import BasicSelect from '../Dashboard/Admin/Blog/BasicSelect';
+import TooltipRight from '../Dashboard/Admin/Product/TooltipRight';
+const ItemNavbar = ({item}) => {
     return (
       <div className="navbar shadow-md">
         <div className="flex-1 gap-3">
           <TooltipRight
-            buttonName={`All - ${products?.length}`}
-            buttonDes={"This is All Product"}
+            buttonName={`All - ${item?.length}`}
+            buttonDes={"This is All Items"}
           />
 
           <TooltipRight
-            buttonName={`Items - ${products?.length}`}
-            buttonDes={"This is All Product"}
+            buttonName={`Items - ${item?.length}`}
+            buttonDes={"This is All Item"}
           />
 
           <TooltipRight
-            buttonName={`Service - ${products?.length}`}
-            buttonDes={"This is All Product"}
+            buttonName={`Service - ${item?.length}`}
+            buttonDes={"This is All Service"}
           />
 
           <BasicSelect />
@@ -45,4 +43,4 @@ const ProductNavbar = () => {
     );
 };
 
-export default ProductNavbar;
+export default ItemNavbar;

@@ -15,7 +15,7 @@ import {
   LinkedinIcon,
 } from "react-share";
 
-export default function DotButton({ productId, refetch }) {
+export default function ProductDotButton({ productId, refetch }) {
   const [openModal, setOpenModal] = useState(false);
   const publicAxios = usePublicAxios();
   const handleDelete = async (id) => {

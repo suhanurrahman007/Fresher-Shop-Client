@@ -1,3 +1,4 @@
+import useAuth from "@/components/hooks/useAuth";
 import usePublicAxios from "@/components/hooks/usePublicAxios";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,53 +8,38 @@ import { useForm } from "react-hook-form";
 import { FaPlus } from "react-icons/fa";
 import { Select } from "@/components/ui/select";
 import toast from "react-hot-toast";
-import { categoryOptions, productTypeOptions } from "./ProductConstant";
+import { categoryOptions, statusOptions, tagOptions } from "./BlogConstant";
 import { LabelInputContainer } from "@/components/ui/LabelInputContainer";
 
-export default function AddProduct({ refetch }) {
+export default function AddBlog({ refetch }) {
   const [openModal, setOpenModal] = useState(false);
   const publicAxios = usePublicAxios();
+  const { user } = useAuth();
 
-
-
-  const {
-    register,
-    handleSubmit,
-    reset, // Import reset from useForm
-  } = useForm();
-
+  const { register, handleSubmit, reset } = useForm();
   const onSubmit = async (data) => {
-    // Create product object
-    const productInfo = {
-      product_name: data?.name,
-      brand: data?.brand,
-      price: parseFloat(data?.price),
-      discount_price: parseFloat(data?.discount_price),
-      product_type: data?.product_type,
+    const postInfo = {
+      name: user?.displayName,
+      userImg: user?.photoURL,
+      title: data?.title,
       description: data?.description,
       category: data?.category,
+      status: data?.status,
       image: data?.image,
-      status: "Inactive",
+      tag: data.tag,
     };
 
-    console.log(productInfo);
+    console.log(postInfo);
 
-    try {
-      // Send product data to the backend API
-      const res = await publicAxios.post("/products", productInfo);
-      console.log(res.data);
-      if (res.data.insertedId) {
-        toast.success("Product added successfully!");
-        reset(); // Clear the form fields
-        refetch()
-        setOpenModal(false); // Close the modal
-      }
-    } catch (error) {
-      console.error("Error adding product", error);
-      toast.error("Error adding product, please try again.");
+    const res = await publicAxios.post("/posts", postInfo);
+    console.log(res.data);
+    if (res.data.insertedId) {
+      toast.success("Successfully Post here");
+      reset()
+      refetch()
+      setOpenModal(false)
     }
   };
-
   return (
     <div>
       {/* Add Product Button */}
@@ -61,7 +47,7 @@ export default function AddProduct({ refetch }) {
         onClick={() => setOpenModal(true)}
         className="relative text-xl border-4 border-sky-900 w-48 h-11 rounded-lg bg-sky-600 text-white group"
       >
-        <span className="pr-8 text-sm">Add Product</span>
+        <span className="pr-8 text-sm">Add Blog</span>
         <span className="absolute right-0 top-0 h-full flex items-center justify-center w-10 bg-sky-900 group-hover:w-full transition-all duration-300">
           <FaPlus />
         </span>
@@ -90,13 +76,13 @@ export default function AddProduct({ refetch }) {
 
                   <div className="form-control text-xs">
                     <LabelInputContainer>
-                      <Label htmlFor="name">
-                        Product Name <span className="text-red-700">*</span>
+                      <Label htmlFor="title">
+                        Blog Title <span className="text-red-700">*</span>
                       </Label>
                       <Input
-                        id="name"
-                        {...register("name", { required: true })}
-                        placeholder="Enter Product Name"
+                        id="title"
+                        {...register("title", { required: true })}
+                        placeholder="Enter Product title"
                         type="text"
                       />
                     </LabelInputContainer>
@@ -105,8 +91,7 @@ export default function AddProduct({ refetch }) {
                   <div className="form-control text-xs">
                     <LabelInputContainer>
                       <Label htmlFor="description">
-                        Product Description{" "}
-                        <span className="text-red-700">*</span>
+                        Blog Description <span className="text-red-700">*</span>
                       </Label>
                       <TextArea
                         id="description"
@@ -119,47 +104,55 @@ export default function AddProduct({ refetch }) {
                 </div>
 
                 <div className="space-y-3 p-4 dark:bg-[#010313] rounded-md text-gray-900 dark:text-white shadow-md">
-                  <h2 className="text-lg font-bold">Pricing</h2>
-
-                  <div className="form-control text-xs">
+                  <h2 className="text-lg font-bold">User Management</h2>
+                  <div className="form-control w-full text-xs">
                     <LabelInputContainer>
-                      <Label htmlFor="price">
-                        Base Price <span className="text-red-700">*</span>
+                      <Label htmlFor="status">
+                        Status <span className="text-red-700">*</span>
                       </Label>
-                      <Input
-                        id="price"
-                        {...register("price", { required: true })}
-                        placeholder="Enter Product Price"
-                        type="number"
-                      />
+                      <Select
+                        id="status"
+                        defaultValue="default"
+                        {...register("status", { required: true })}
+                        className="select bg-[#0D0D21] text-white select-bordered w-full"
+                      >
+                        <option disabled value="default">
+                          Select a status
+                        </option>
+                        {statusOptions?.map((status) => (
+                          <option key={status} value={status}>
+                            {status}
+                          </option>
+                        ))}
+                      </Select>
                     </LabelInputContainer>
                   </div>
 
                   <div className="lg:flex justify-center items-center gap-4">
-                    <div className="form-control w-full text-xs">
+                    <div className="form-control text-xs">
                       <LabelInputContainer>
-                        <Label htmlFor="discount_price">
-                          Discount Percentage (%){" "}
-                          <span className="text-red-700">*</span>
+                        <Label htmlFor="userName">
+                          User Name <span className="text-red-700">*</span>
                         </Label>
                         <Input
-                          id="discount_price"
-                          {...register("discount_price", { required: true })}
-                          placeholder="Enter Product Discount Price"
-                          type="number"
+                          id="userName"
+                          defaultValue={user?.displayName}
+                          disabled
+                          type="userName"
                         />
                       </LabelInputContainer>
                     </div>
                     <div className="form-control w-full text-xs">
                       <LabelInputContainer>
-                        <Label htmlFor="brand">
-                          Product brand <span className="text-red-700 ">*</span>
+                        <Label htmlFor="userPhoto">
+                          User Photo URL
+                          <span className="text-red-700">*</span>
                         </Label>
                         <Input
-                          id="brand"
-                          {...register("brand", { required: true })}
-                          placeholder="Enter Product brand"
-                          type="text"
+                          id="userPhoto"
+                          defaultValue={user?.photoURL}
+                          disabled
+                          type="url"
                         />
                       </LabelInputContainer>
                     </div>
@@ -175,7 +168,7 @@ export default function AddProduct({ refetch }) {
                   <div className="form-control text-xs">
                     <LabelInputContainer>
                       <Label htmlFor="image">
-                        Product Photo <span className="text-red-700">*</span>
+                        Blog Photo <span className="text-red-700">*</span>
                       </Label>
                       <Input
                         id="image"
@@ -194,7 +187,7 @@ export default function AddProduct({ refetch }) {
                   <div className="form-control w-full my-6">
                     <LabelInputContainer>
                       <Label htmlFor="category">
-                        Product Category <span className="text-red-700">*</span>
+                        Blog Category <span className="text-red-700">*</span>
                       </Label>
                       <Select
                         id="category"
@@ -216,19 +209,19 @@ export default function AddProduct({ refetch }) {
 
                   <div className="form-control w-full my-6">
                     <LabelInputContainer>
-                      <Label htmlFor="product_type">
-                        Product Type <span className="text-red-700">*</span>
+                      <Label htmlFor="tag">
+                        Blog Tag <span className="text-red-700">*</span>
                       </Label>
                       <Select
-                        id="product_type"
+                        id="tag"
                         defaultValue="default"
-                        {...register("product_type", { required: true })}
+                        {...register("tag", { required: true })}
                         className="select bg-[#0D0D21] text-white select-bordered w-full"
                       >
                         <option disabled value="default">
-                          Select a Product Type
+                          Select a Tag
                         </option>
-                        {productTypeOptions?.map((type) => (
+                        {tagOptions?.map((type) => (
                           <option key={type} value={type}>
                             {type}
                           </option>
@@ -242,7 +235,7 @@ export default function AddProduct({ refetch }) {
                   type="submit"
                   className="group relative flex h-12 w-full items-center rounded-lg border-2 border-sky-400 p-4 text-sky-300"
                 >
-                  <span>Add Product</span>
+                  <span>Add Blog</span>
                   <span className="absolute right-3 box-content flex w-1/6 justify-center rounded-md bg-sky-400 duration-300 group-hover:w-5/6">
                     <svg
                       viewBox="0 0 24 24"

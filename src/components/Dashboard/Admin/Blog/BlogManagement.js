@@ -1,24 +1,26 @@
 import Image from "next/image";
-import ProductDotButton from "./ProductDotButton";
+import { BsThreeDots } from "react-icons/bs";
+import DotButton from "./BlgoDotButton";
+import BlogDotButton from "./BlgoDotButton";
 
-const ProductManagement = ({ products, refetch }) => {
-  console.log(products);
+const BlogManagement = ({ posts, refetch }) => {
+  console.log(posts);
   return (
     <div>
       <div className="overflow-x-auto ">
         <table className="w-full shadow-md  mx-auto  my-6">
           <thead className="">
             <tr className="bg-[#0D0D21] text-purple-400">
-              <th className="py-3 px-6 text-left">Product</th>
-              <th className="py-3 px-6 text-left">Price</th>
+              <th className="py-3 px-6 text-left">Post</th>
+              <th className="py-3 px-6 text-left">Author</th>
               <th className="py-3 px-6 text-left">Status</th>
-              <th className="py-3 px-6 text-left">Product Type</th>
+              <th className="py-3 px-6 text-left">Post Category</th>
               <th className="py-3 px-6  text-left">Create At</th>
               <th className="py-3 px-6  text-left"></th>
             </tr>
           </thead>
           <tbody>
-            {products?.map((item) => (
+            {posts?.map((item) => (
               <tr
                 key={item?._id}
                 className="hover:bg-[#0D0D21] transition duration-300"
@@ -39,26 +41,26 @@ const ProductManagement = ({ products, refetch }) => {
                     {/* Product Details */}
                     <div className="space-y-1">
                       <h2 className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                        {item?.product_name?.split(" ").slice(0, 2).join(" ")}
+                        {item?.title?.split(" ").slice(0, 2).join(" ")}
                       </h2>
                       <p className="text-xs text-gray-500 dark:text-gray-400">
-                        {item?.brand}
+                        {item?.tag}
                       </p>
                     </div>
                   </div>
                 </td>
 
                 <td className="py-4 px-6 border-b border-b-gray-800">
-                  {item?.price}
+                  {item?.name?.split(" ").slice(0, 2).join(" ")}
                 </td>
                 <td className="py-4 px-6 border-b border-b-gray-800">
                   {item?.status ? item?.status : "Default"}
                 </td>
                 <td className="py-4 px-6 border-b border-b-gray-800">
-                  {item?.product_type?.split(" ").slice(0, 1).join(" ")}
+                  {item?.category?.split(" ").slice(0, 1).join(" ")}
                 </td>
                 <td className="py-4 px-6 border-b border-b-gray-800">
-                  {new Date(item?.date).toLocaleString("en-US", {
+                  {new Date(item?.time).toLocaleString("en-US", {
                     year: "numeric",
                     month: "short",
                     day: "numeric",
@@ -68,7 +70,7 @@ const ProductManagement = ({ products, refetch }) => {
                   })}
                 </td>
                 <td className="py-4 px-6 border-b border-b-gray-800 text-end">
-                  <ProductDotButton productId={item?._id} refetch={refetch}/>
+                  <BlogDotButton blogId={item?._id} refetch={refetch} />
                 </td>
               </tr>
             ))}
@@ -79,4 +81,4 @@ const ProductManagement = ({ products, refetch }) => {
   );
 };
 
-export default ProductManagement;
+export default BlogManagement;

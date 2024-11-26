@@ -118,21 +118,6 @@ const DashboardLayout = ({ children }) => {
       </li>
 
       <li>
-        <Link href="/dashboard/addPost">
-          <span
-            className={`nav-link ${
-              pathname === "/dashboard/addPost"
-                ? "active"
-                : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
-            }`}
-          >
-            <FaSignsPost></FaSignsPost>
-            Blog Add
-          </span>
-        </Link>
-      </li>
-
-      <li>
         <Link href="/dashboard/productManage">
           <span
             className={`nav-link ${
@@ -146,7 +131,20 @@ const DashboardLayout = ({ children }) => {
           </span>
         </Link>
       </li>
-
+      <li>
+        <Link href="/dashboard/blogManage">
+          <span
+            className={`nav-link ${
+              pathname === "/dashboard/blogManage"
+                ? "active"
+                : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
+            }`}
+          >
+            <FaSignsPost></FaSignsPost>
+            Blog Manage
+          </span>
+        </Link>
+      </li>
       <li>
         <Link href="/dashboard/usersManage">
           <span
