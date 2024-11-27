@@ -1,5 +1,4 @@
 "use client";
-import useLatestProducts from "@/components/hooks/useLatestProducts";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -33,10 +32,10 @@ const SimilarProducts = ({ category }) => {
   return (
     <div>
       <Container>
-        <SectionTitle
-          header={"Similar Products"}
-          miniHeader={"You might also like these items"}
-        />
+        <h1 className="text-3xl font-extrabold text-purple-300 mb-3">
+          Similar Products
+        </h1>
+        <hr className="border-neutral-800 my-2" />
         <div className="my-7">
           <Swiper
             slidesPerView={4}

@@ -21,13 +21,10 @@ import usePublicAxios from "@/components/hooks/usePublicAxios";
 import { useForm } from "react-hook-form";
 import useComments from "@/components/hooks/useComments";
 import DarkCalendar from "@/components/share/Calendar/Calendar";
-import {
-  BottomGradient,
-  LabelInputContainer,
-} from "@/app/dashboard/(admin)/addPost/page";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CommentCard } from "./CommentCard";
+import { BottomGradient, LabelInputContainer } from "@/components/ui/LabelInputContainer";
 
 const BlogDetails = ({ params }) => {
   const publicAxios = usePublicAxios();

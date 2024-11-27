@@ -14,23 +14,28 @@ import useProducts from "@/components/hooks/useProducts";
 import Loading from "@/app/loading";
 import { BsBookmarkPlusFill } from "react-icons/bs";
 import ProductDescription from "./ProductDescription";
-import Link from "next/link";
 import OrderCard from "./OrderCard";
-import LoveRating from "./Rating";
-import LatestProducts from "@/components/HomeDesign/LatestProducts/LatestProducts";
+import LoveRating from "./LoveRating";
 import SimilarProducts from "@/components/HomeDesign/LatestProducts/SimilarProducts";
 import Testimonial from "@/components/HomeDesign/Testimonial/Testimonial";
 import usePublicAxios from "@/components/hooks/usePublicAxios";
 import useUser from "@/components/hooks/useUser";
 import toast from "react-hot-toast";
 import useCart from "@/components/hooks/useCart";
+import RatingCard from "./RatingCard";
+import useRating from "@/components/hooks/useRating";
+import Review from "@/app/dashboard/review/page";
 
 const ProductDetails = ({ params }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const publicAxios = usePublicAxios();
   const [user] = useUser();
 
+  const [ratings, ratingsRefetch] = useRating();
+
   const { id } = params;
+
+  const filterRatings = ratings?.filter((item) => item?.postId === id) || [];
   const [products] = useProducts();
   const findProduct = products?.find((item) => item?._id === id);
   const [cart, refetch] = useCart();
@@ -122,7 +127,10 @@ const ProductDetails = ({ params }) => {
                     {findProduct?.product_name}
                   </h6>
                   <ProductDescription findProduct={findProduct} />
-                  <LoveRating />
+                  <LoveRating
+                    findProduct={findProduct}
+                    ratingsRefetch={ratingsRefetch}
+                  />
                   <p>
                     <span className="text-gray-700 mr-4 line-through">
                       ${findProduct?.price?.toFixed(2)}
@@ -204,7 +212,10 @@ const ProductDetails = ({ params }) => {
         </div>
       </Container>
       <div className="space-y-9">
-        <Testimonial />
+        <RatingCard
+          filterRatings={filterRatings}
+          ratingsRefetch={ratingsRefetch}
+        />
         <SimilarProducts category={findProduct?.category} />
       </div>
     </>

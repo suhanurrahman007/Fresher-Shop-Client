@@ -118,7 +118,7 @@ export function CommentCard({ cards, refetch }) {
       </AnimatePresence>
 
       <ul className="max-w-2xl mx-auto w-full gap-4 space-y-3">
-        {cards.map((card) => (
+        {cards?.map((card) => (
           <motion.div
             key={`card-${card.name}-${id}`}
             className="p-3 bg-[#010313] flex flex-row justify-between hover:bg-neutral-50 dark:hover:bg-[#000C21] rounded-lg cursor-pointer"
