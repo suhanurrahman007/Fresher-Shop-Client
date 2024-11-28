@@ -34,10 +34,11 @@ const Login = () => {
   const onGoogleSubmit = async () => {
     await googleUser()
       .then((result) => {
-        console.log(result.user.displayName);
+        console.log(result.user?.photoUrl);
         const userInfo = {
           name: result?.user?.displayName,
           email: result?.user?.email,
+          role: 'user'
         };
 
         publicAxios.post("/users", userInfo).then((res) => {

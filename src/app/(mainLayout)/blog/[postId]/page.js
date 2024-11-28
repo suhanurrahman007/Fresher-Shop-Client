@@ -25,6 +25,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CommentCard } from "./CommentCard";
 import { BottomGradient, LabelInputContainer } from "@/components/ui/LabelInputContainer";
+import { format } from "date-fns";
 
 const BlogDetails = ({ params }) => {
   const publicAxios = usePublicAxios();
@@ -73,7 +74,8 @@ const BlogDetails = ({ params }) => {
               {findPost?.title}
             </h2>
             <p className="text-sm text-gray-400 text-justify mt-2 my-4">
-              {findPost?.time} <span className="px-2">|</span>{" "}
+              {findPost?.time ? format(new Date(findPost?.time), "dd MMM yyyy") : "N/A"}{" "}
+              <span className="px-2">|</span>{" "}
               <span>{filterComments?.length} Comments</span>
             </p>
             <Image

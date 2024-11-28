@@ -7,7 +7,6 @@ import Container from "@/components/share/Container";
 import ProductCard from "@/app/(mainLayout)/shop/ProductCard";
 import useProducts from "@/components/hooks/useProducts";
 import Loading from "@/app/loading";
-import SectionTitle from "@/components/share/SectionTitle";
 
 const SimilarProducts = ({ category }) => {
   const [products, refetch, isLoading] = useProducts();

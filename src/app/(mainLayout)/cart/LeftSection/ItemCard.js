@@ -6,6 +6,7 @@ import { useOutsideClick } from "@/components/ui/use-outside-click";
 import { MdDelete } from "react-icons/md";
 import usePublicAxios from "@/components/hooks/usePublicAxios";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 export function ItemCard({ cards, refetch }) {
   const [active, setActive] = useState(null);
@@ -27,7 +28,6 @@ export function ItemCard({ cards, refetch }) {
       toast.error("An error occurred while removing the item.");
     }
   };
-
 
   useEffect(() => {
     function onKeyDown(event) {
@@ -85,9 +85,11 @@ export function ItemCard({ cards, refetch }) {
                 />
               </motion.div>
               <div className="space-y-0.5">
-                <motion.h3 className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left">
-                  {card?.productName}
-                </motion.h3>
+                <Link href={`/shop/${card?._id}`}>
+                  <motion.h3 className="font-medium cursor-pointer hover:text-blue-700 text-neutral-800 dark:text-neutral-200 text-center md:text-left">
+                    {card?.productName}
+                  </motion.h3>
+                </Link>
                 <motion.p className="text-purple-600 text-sm text-center md:text-left">
                   {card?.productPrice}
                 </motion.p>

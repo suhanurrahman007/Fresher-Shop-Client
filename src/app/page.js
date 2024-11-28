@@ -1,14 +1,9 @@
 
-// import Accordion4 from "@/components/HomeDesign/F";
-import Faq from "@/components/HomeDesign/Faq/Faq";
 import LatestProducts from "@/components/HomeDesign/LatestProducts/LatestProducts";
-import OurTeams from "@/components/HomeDesign/OurTeam/OurTeam";
-import Testimonial from "@/components/HomeDesign/Testimonial/Testimonial";
 import { Carousel } from "@/components/share/Carousel/Carousel";
 import Footer from "@/components/share/Footer/Footer";
 import Navbar from "@/components/share/Navbar/Navbar";
 import SideNavbar from "@/components/share/Navbar/SideNavbar";
-import ContactUs from "./(mainLayout)/contactUs/page";
 import ProductMenu from "@/components/HomeDesign/ProductMenu/ProductMenu";
 const HomePage = () => {
   return (
@@ -22,11 +17,6 @@ const HomePage = () => {
                 <Carousel />
                 <ProductMenu />
                 <LatestProducts />
-                <Faq />
-                <OurTeams />
-                <Testimonial />
-                <ContactUs />
-                {/* <Accordion4 /> */}
                 <Footer />
             </div> 
             <div className="drawer-side">

@@ -7,7 +7,6 @@ import {
   FaUserTag,
   FaServicestack,
   FaBlog,
-  FaCartArrowDown,
 } from "react-icons/fa";
 import { BiLogOut, BiSolidDashboard } from "react-icons/bi";
 import { MdLogin, MdCalculate } from "react-icons/md";

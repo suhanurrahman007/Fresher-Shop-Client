@@ -6,6 +6,7 @@ import Faq from "@/components/HomeDesign/Faq/Faq";
 import { CategoriesCard } from "./Categories/CategoriesCard";
 import Categories from "./Categories/Categories";
 import ContactUs from "../contactUs/page";
+import Testimonial from "@/components/HomeDesign/Testimonial/Testimonial";
 
 const Support = () => {
   return (
@@ -14,9 +15,12 @@ const Support = () => {
       <Container>
         <div className="">
           <ServiceTools />
-          <Faq />
           <Categories />
-          <ContactUs />
+          <div className="pt-10">
+            <Testimonial />
+          </div>
+
+          <Faq />
         </div>
       </Container>
     </div>

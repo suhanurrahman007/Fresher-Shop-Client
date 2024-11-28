@@ -10,6 +10,7 @@ import useLatestPosts from "@/components/hooks/useLatestPosts";
 import Image from "next/image";
 import Link from "next/link";
 import DarkCalendar from "../../../components/share/Calendar/Calendar";
+import { format } from "date-fns";
 
 const Blog = () => {
   const [posts] = usePosts();
@@ -132,7 +133,9 @@ const Blog = () => {
                       {item?.title}
                     </Link>
                     <p className="text-xs text-justify text-gray-400">
-                      {item?.time}
+                      {item?.time
+                        ? format(new Date(item?.time), "dd MMM yyyy")
+                        : "N/A"}
                     </p>
                   </div>
                 </div>

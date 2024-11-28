@@ -6,7 +6,6 @@ import toast from "react-hot-toast";
 import { useOutsideClick } from "@/components/ui/use-outside-click";
 import usePublicAxios from "@/components/hooks/usePublicAxios";
 import {
-  formatDistanceToNow,
   differenceInDays,
   differenceInMonths,
   differenceInYears,

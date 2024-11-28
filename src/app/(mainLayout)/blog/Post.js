@@ -1,4 +1,5 @@
 import useComments from "@/components/hooks/useComments";
+import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,7 +8,6 @@ const Post = ({ post }) => {
 
   const filterComments = comments?.filter((item) => item?.postId === post?._id);
 
-  console.log(filterComments);
   return (
     <div>
       <div className="">
@@ -15,7 +15,8 @@ const Post = ({ post }) => {
           {post?.title}
         </h2>
         <p className="text-sm text-gray-400 text-justify mt-2 my-4">
-          {post?.time} <span className="px-2">|</span>{" "}
+          {post?.time ? format(new Date(post?.time), "dd MMM yyyy") : "N/A"}{" "}
+          <span className="px-2">|</span>{" "}
           <span>{filterComments?.length} Comments</span>
         </p>
         <Image
