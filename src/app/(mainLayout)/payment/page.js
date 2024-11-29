@@ -17,6 +17,7 @@ const PaymentPage = () => {
   );
 
   const [order] = useOrder();
+
   const publicAxios = usePublicAxios();
   const { user } = useAuth();
 
@@ -44,12 +45,14 @@ const PaymentPage = () => {
 
   const cashPayment = {
     name: user?.displayName,
+    orderId: mostRecentData?._id,
     email: user?.email,
     amount: totalCharges,
     transactionId: "COD", // Placeholder for Cash on Delivery
-    payment: "Pending",
+    payment: "Cash On Delivery",
     date: new Date().toISOString(), // Standardized date format
   };
+  console.log(mostRecentData);
 
   console.log(cashPayment);
   const handleCashOnDelivery = async () => {
@@ -85,17 +88,13 @@ const PaymentPage = () => {
     doc.text(`Phone: ${mostRecentData?.phone}`, 20, 55);
     doc.text(`Product Price: ${totalCharges}`, 20, 60);
     doc.setFontSize(10);
-    doc.text(
-      `Delivery Date: ${mostRecentData?.deliveryDate}`,
-      125,
-      45
-    );
+    doc.text(`Delivery Date: ${mostRecentData?.deliveryDate}`, 125, 45);
     doc.text(`Tracking No: ${mostRecentData?._id}`, 125, 50);
 
     doc.setTextColor(255, 0, 0); // Set color to red (RGB: 255, 0, 0)
     doc.text(`Payment: Pending`, 125, 55);
 
-     doc.setTextColor(0, 0, 0);
+    doc.setTextColor(0, 0, 0);
     doc.setFont("helvetica", "bold");
     doc.text("Delivery Address", 20, 80);
     doc.setFont("helvetica", "normal");

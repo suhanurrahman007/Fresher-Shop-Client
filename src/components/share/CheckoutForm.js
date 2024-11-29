@@ -74,17 +74,20 @@ const CheckoutForm = ({ amount, order, findOrder }) => {
 
       // Send payment details to backend
       const payment = {
-        _id: order?._id || findOrder?._id,
+        orderId: order?._id || findOrder?._id,
         name: user?.displayName,
         email: user?.email,
         amount,
         transactionId: paymentIntent.id,
-        payment: "successful",
+        payment: "Paid",
         date: new Date(),
       };
 
       try {
         await publicAxios.post("/payment", payment);
+        await publicAxios.put(`/order/${order?._id || findOrder?._id}`, {
+          payment: "Paid",
+        });
       } catch (err) {
         console.error("Error saving payment:", err);
       }

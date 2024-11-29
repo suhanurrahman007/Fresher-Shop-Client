@@ -28,8 +28,10 @@ export const OrderModal = ({ totalPrice, discountPrice }) => {
     phone,
     productPrice: discountPrice,
     productName: order?.product_name || "Custom Product",
+    productImage: order?.image || "https://i.ibb.co.com/K2JPnyv/avatar.png",
     area,
     status: "pending",
+    payment: "Cash On Delivery",
   };
 
   const handleOrder = async (e) => {

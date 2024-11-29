@@ -1,24 +1,18 @@
 "use client";
-import AddProduct from "@/components/Dashboard/Admin/Product/AddProduct";
-import ProductManagement from "@/components/Dashboard/Admin/Product/ProductManagement";
-import useProducts from "@/components/hooks/useProducts";
+import OrderManagement from "@/components/Dashboard/Admin/Order/OrderManagement";
+import useAllOrder from "@/components/hooks/useAllOrder";
 import ItemNavbar from "@/components/share/ItemNavbar";
 import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
-const ProductManage = () => {
-  const [products, refetch] = useProducts();
+const OrderManage = () => {
+  const [allOrder, refetch] = useAllOrder()
+  console.log(allOrder);
   const [selectedTab, setSelectedTab] = useState(0); // Controlled tab state
 
   return (
     <div className="p-6 min-h-screen text-white">
-      {/* Header Section */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl text-purple-300 font-bold">Products Manage</h1>
-        <AddProduct refetch={refetch} />
-      </div>
-
       {/* Tabs Section */}
       <div className="rounded-lg shadow-lg p-4 bg-[#1a1a2eac]">
         <Tabs
@@ -31,7 +25,7 @@ const ProductManage = () => {
               className="font-bold py-1 px-2 text-xs rounded border border-purple-700 hover:bg-gradient-to-r from-blue-400 to-purple-500"
               selectedClassName="bg-gradient-to-r from-blue-400 to-purple-500 text-white"
             >
-              All Produces
+              All Order
             </Tab>
             <Tab
               className="font-bold py-1 px-2 text-xs rounded border border-purple-700 hover:bg-gradient-to-r from-blue-400 to-purple-500"
@@ -60,11 +54,11 @@ const ProductManage = () => {
           </TabList>
 
           {/* Product Navbar */}
-          <ItemNavbar item={products}/>
+          <ItemNavbar item={allOrder} />
 
           {/* Tab Panels */}
           <TabPanel className="mt-4">
-            <ProductManagement products={products} refetch={refetch} />
+            <OrderManagement orders={allOrder} refetch={refetch} />
           </TabPanel>
           <TabPanel className="mt-4">
             <p className="text-gray-300">Pricing Table content will go here.</p>
@@ -88,4 +82,4 @@ const ProductManage = () => {
   );
 };
 
-export default ProductManage;
+export default OrderManage;
