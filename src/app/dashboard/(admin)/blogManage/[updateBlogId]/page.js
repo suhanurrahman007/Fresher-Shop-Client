@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { LabelInputContainer } from "../../addPost/page";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { TextArea } from "@/components/ui/textArea";
@@ -12,6 +11,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import usePosts from "@/components/hooks/usePosts";
 import { statusOptions, tagOptions } from "@/components/Dashboard/Admin/Blog/BlogConstant";
+import { LabelInputContainer } from "@/components/ui/LabelInputContainer";
 
 const UpdateBlog = ({ params }) => {
   const [posts, refetch] = usePosts();

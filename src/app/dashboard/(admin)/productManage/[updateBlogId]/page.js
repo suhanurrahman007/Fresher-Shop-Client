@@ -1,7 +1,6 @@
 "use client";
 import useProducts from "@/components/hooks/useProducts";
 import React from "react";
-import { LabelInputContainer } from "../../addPost/page";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { TextArea } from "@/components/ui/textArea";
@@ -11,6 +10,7 @@ import usePublicAxios from "@/components/hooks/usePublicAxios";
 import { categoryOptions, productTypeOptions } from "@/components/Dashboard/Admin/Product/ProductConstant";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { LabelInputContainer } from "@/components/ui/LabelInputContainer";
 
 const UpdateProduct = ({ params }) => {
   const [products, refetch] = useProducts();
