@@ -1,10 +1,7 @@
-import Image from "next/image";
-import avatar from "@/assets/avatar.png";
+import { FaTrashAlt, FaUser } from "react-icons/fa";
 import usePublicAxios from "@/components/hooks/usePublicAxios";
 import toast from "react-hot-toast";
-import ReturnProduct from "./ReturnProduct";
-import { MdCancel } from "react-icons/md";
-const MyOrderManagement = ({ orders, refetch }) => {
+const DeliveryBoyManagement = ({ deliveryBoy, refetch }) => {
   const publicAxios = usePublicAxios();
 
   const handleDelete = (id) => {
@@ -46,7 +43,7 @@ const MyOrderManagement = ({ orders, refetch }) => {
               onMouseOut={(e) => (e.target.style.backgroundColor = "#28a745")}
               onClick={() => {
                 publicAxios
-                  .delete(`/order/${id}`)
+                  .delete(`/job/${id}`)
                   .then((res) => {
                     if (res.data.deletedCount > 0) {
                       toast.success("Order deleted successfully", {
@@ -98,76 +95,58 @@ const MyOrderManagement = ({ orders, refetch }) => {
           <thead>
             <tr className="bg-[#0D0D21] text-purple-400">
               <th className="py-3 px-3 text-start">User</th>
-              <th className="py-3 px-3 text-left">Price</th>
-              <th className="py-3 px-3 text-left">Payment</th>
+              <th className="py-3 px-3 text-left">Phone Number</th>
               <th className="py-3 px-3 text-left">Address</th>
-              <th className="py-3 px-3 text-left">Phone</th>
-              <th className="py-3 px-3 text-left">Return</th>
+              <th className="py-3 px-3 text-left">Role</th>
+              <th className="py-3 px-3 text-left">Create At</th>
               <th className="py-3 px-3 text-left">Action</th>
             </tr>
           </thead>
           <tbody>
-            {orders?.map((item) => (
+            {deliveryBoy?.map((item) => (
               <tr
                 key={item?._id}
                 className="hover:bg-[#0D0D21] transition duration-300"
               >
                 <td className="py-2 px-3 border-b border-b-gray-800">
                   <div className="flex items-center gap-4">
-                    {/* User Image */}
-                    <div>
-                      <Image
-                        width={500}
-                        height={500}
-                        className="size-10 rounded-full bg-slate-500 object-cover"
-                        src={item?.productImage}
-                        alt={item?.productName || "User avatar"}
-                        onError={(e) => (e.target.src = avatar)}
-                      />
-                    </div>
-
                     {/* User Details */}
                     <div className="space-y-1">
                       <h2 className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                        {item?.productName?.split(" ").slice(0, 2).join(" ")}
+                        {item?.fullName?.split(" ").slice(0, 2).join(" ")}
                       </h2>
                       <p className="text-xs text-gray-500 dark:text-gray-400">
-                        {item?.phone}
+                        {item?.email}
                       </p>
                     </div>
                   </div>
                 </td>
                 <td className="py-4 text-xs px-3 border-b border-b-gray-800">
-                  {item?.productPrice?.toFixed(2)}
-                </td>
-                {item?.payment === "Paid" ? (
-                  <td className="py-4 text-xs text-green-600 font-extrabold px-3 border-b border-b-gray-800">
-                    {item?.payment}
-                  </td>
-                ) : (
-                  <td className="py-4 text-xs text-blue-600 font-extrabold px-3 border-b border-b-gray-800">
-                    {item?.payment}
-                  </td>
-                )}
-                <td className="py-4 text-xs px-3 border-b border-b-gray-800">
-                  {item?.area?.split(" ").slice(0, 1).join(" ")}
-                </td>
-                <td className="py-4 px-3 text-xs border-b border-b-gray-800">
                   {item?.phone}
                 </td>
-                <td className="py-4 px-3 border-b border-b-gray-800">
-                  <ReturnProduct refetch={refetch} orderReturn={item} />
+                <td className="py-4 text-xs text-blue-600 font-extrabold px-3 border-b border-b-gray-800">
+                  {item?.address?.split(" ").slice(0, 2).join(" ")}
                 </td>
-
+                <td className="py-4 text-xs px-3 text-green-300 border-b border-b-gray-800">
+                  {item?.role}
+                </td>
+                <td className="py-4 px-3 text-xs border-b border-b-gray-800">
+                  {new Date(item?.time).toLocaleString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                    hour12: true,
+                  })}
+                </td>
                 <td className="py-4 px-3 border-b border-b-gray-800">
                   <button
                     onClick={() => handleDelete(item?._id)}
                     aria-label={`Delete user ${item.name}`}
-                    className="flex items-center justify-end gap-1 text-red-600 hover:text-green-600 transition-all duration-300"
+                    className="flex items-center justify-end gap-2 text-red-600 hover:text-green-600 transition-all duration-300"
                   >
-                    <MdCancel className="text-base " />
+                    <FaTrashAlt className="text-base " />
                     <span className="hidden md:inline text-xs font-semibold">
-                      Cancel
+                      Delete
                     </span>
                   </button>
                 </td>
@@ -180,4 +159,4 @@ const MyOrderManagement = ({ orders, refetch }) => {
   );
 };
 
-export default MyOrderManagement;
+export default DeliveryBoyManagement;
