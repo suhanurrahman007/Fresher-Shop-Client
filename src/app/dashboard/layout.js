@@ -84,16 +84,16 @@ const DashboardLayout = ({ children }) => {
         </Link>
       </li>
       <li>
-        <Link href="/dashboard/review">
+        <Link href="/dashboard/job">
           <span
             className={`nav-link ${
-              pathname === "/dashboard/review"
+              pathname === "/dashboard/job"
                 ? "active"
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
             <MdRateReview></MdRateReview>
-            Review
+            Job Apply Delivery Boy
           </span>
         </Link>
       </li>
@@ -202,7 +202,7 @@ const DashboardLayout = ({ children }) => {
           >
             {" "}
             <FaBriefcase></FaBriefcase>
-            Application
+            Job Application Manage
           </span>
         </Link>
       </li>
