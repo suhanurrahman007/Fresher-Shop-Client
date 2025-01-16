@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -11,8 +11,8 @@ import useCart from "@/components/hooks/useCart";
 
 const Shop = () => {
   const [products] = useProducts();
-  const [cart, refetch] = useCart()
-  
+  const [cart, refetch] = useCart();
+
   const casual = products.filter((item) => item?.product_type === "casual");
   const accessories = products.filter(
     (item) => item?.product_type === "accessories"
@@ -35,7 +35,6 @@ const Shop = () => {
   const totalHomePage = Math.ceil(home?.length / perPage);
   const totalElectronicsPage = Math.ceil(electronics?.length / perPage);
   const totalPersonal_carePage = Math.ceil(personal_care?.length / perPage);
-
 
   const handlePageChange = (num) => {
     setPageNumber(num);
@@ -249,7 +248,9 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
             key={page}
             onClick={() => onPageChange(page)}
             className={`cursor-pointer hover:scale-110 scale-100 transition-all duration-200 px-5 ${
-              currentPage === page ? "bg-purple-900 text-white" : "bg-purple-200"
+              currentPage === page
+                ? "bg-purple-900 text-white"
+                : "bg-purple-200"
             } border-sky-300  font-semibold text-gray-700   py-3 rounded-full`}
           >
             {page + 1}
@@ -269,6 +270,5 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
     </div>
   );
 };
-
 
 export default Shop;

@@ -17,14 +17,12 @@ import ProductDescription from "./ProductDescription";
 import OrderCard from "./OrderCard";
 import LoveRating from "./LoveRating";
 import SimilarProducts from "@/components/HomeDesign/LatestProducts/SimilarProducts";
-import Testimonial from "@/components/HomeDesign/Testimonial/Testimonial";
 import usePublicAxios from "@/components/hooks/usePublicAxios";
 import useUser from "@/components/hooks/useUser";
 import toast from "react-hot-toast";
 import useCart from "@/components/hooks/useCart";
 import RatingCard from "./RatingCard";
 import useRating from "@/components/hooks/useRating";
-import Review from "@/app/dashboard/review/page";
 
 const ProductDetails = ({ params }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
