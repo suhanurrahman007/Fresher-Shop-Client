@@ -14,6 +14,9 @@ import TopProduce from "@/components/Dashboard/Admin/AdminProfile/TopProduct/Top
 import TotalPayment from "@/components/Dashboard/Admin/AdminProfile/TotalPayment/TotalPayment";
 import StorageCard from "@/components/Dashboard/Admin/AdminProfile/StorageCard/StorageCard";
 import Storage from "@/components/Dashboard/Admin/AdminProfile/StorageCard/Storage";
+import BarChartComponent from "@/components/Dashboard/Admin/AdminProfile/BarChartComponent";
+import ActiveUsers from "@/components/Dashboard/Admin/AdminProfile/ActiveUser/ActiveUsers";
+import AdminFooter from "@/components/Dashboard/Admin/AdminProfile/ActiveUser/AdminFooter";
 
 const AdminProfile = () => {
   const { user } = useAuth();
@@ -139,6 +142,14 @@ const AdminProfile = () => {
         <TopProduce />
         {/* Total Customers Card */}
         <TotalPayment />
+      </div>
+
+      <div className="container m-auto">
+        <BarChartComponent />
+      </div>
+      <div className="container m-auto">
+        <ActiveUsers />
+        <AdminFooter />
       </div>
     </div>
   );

@@ -34,7 +34,11 @@ const AreaCharts = () => {
         }}
       >
         {/* Hide vertical grid lines and left Y-axis line */}
-        {/* <CartesianGrid strokeDasharray="3 3" vertical={false} /> */}
+        <CartesianGrid
+          strokeDasharray="3 3"
+          stroke="#374151"
+          vertical={false}
+        />
         <XAxis dataKey="name" />
         <YAxis axisLine={false} />
         {/* Removes left Y-axis line */}

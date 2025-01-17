@@ -236,7 +236,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <CgProfile></CgProfile>delivery Men Profile
+            <CgProfile></CgProfile>Delivery Men Profile
           </span>
         </Link>
       </li>

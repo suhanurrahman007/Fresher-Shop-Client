@@ -12,7 +12,7 @@ const Storage = () => {
       }}
     >
       {/* Title */}
-      <h3 className="text-orange-500 text-lg font-bold mb-2">
+      <h3 className="text-orange-500 text-lg font-bold mb-1">
         Running out of your space?
       </h3>
 

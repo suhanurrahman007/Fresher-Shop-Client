@@ -10,12 +10,12 @@ import {
 
 // Color palette for bars
 const colors = [
-  "#FF5733", // Vibrant Orange
-  "#33FF57", // Bright Green
+  "#3357FF", // Vibrant Orange
+  "#3357FF", // Bright Green
   "#3357FF", // Deep Blue
-  "#FF33A6", // Hot Pink
-  "#FFD700", // Gold
-  "#8A2BE2", // Blue Violet
+  "#3357FF", // Hot Pink
+  "#3357FF", // Gold
+  "#3357FF", // Blue Violet
 ];
 
 
@@ -46,7 +46,7 @@ const TriangleBar = (props) => {
 
 const UserChart = () => {
   return (
-    <div style={{ width: "250px", height: "150px", margin: 0, padding: 0 }}>
+    <div style={{ width: "200px", height: "150px", margin: 0, padding: 0 }}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
