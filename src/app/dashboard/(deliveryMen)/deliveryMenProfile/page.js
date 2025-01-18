@@ -7,6 +7,7 @@ import ProductOverview from "@/components/Dashboard/DaliveryMen/DeliveryMenProfi
 import TotalEarning from "@/components/Dashboard/DaliveryMen/DeliveryMenProfile/TotalEarning/TotalEarning";
 import ActiveUsers from "@/components/Dashboard/Admin/AdminProfile/ActiveUser/ActiveUsers";
 import AdminFooter from "@/components/Dashboard/Admin/AdminProfile/ActiveUser/AdminFooter";
+import DeliveryCard from "@/components/Dashboard/DaliveryMen/DeliveryMenProfile/DeliveryCard/DeliveryCard";
 
 const DeliveryMenProfile = () => {
   const { user } = useAuth();
@@ -22,6 +23,7 @@ const DeliveryMenProfile = () => {
       </h2>
 
       <DeliveryStats />
+      <DeliveryCard />
 
       {/* Charts and Earnings Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
