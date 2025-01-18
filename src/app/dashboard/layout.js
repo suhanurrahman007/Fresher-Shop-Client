@@ -50,7 +50,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <CgProfile></CgProfile>My Profile
+            <CgProfile className="text-purple-600"></CgProfile>My Profile
           </span>
         </Link>
       </li>
@@ -63,7 +63,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <MdWorkHistory></MdWorkHistory>
+            <MdWorkHistory className="text-purple-600"></MdWorkHistory>
             Payment History
           </span>
         </Link>
@@ -78,7 +78,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <FaJediOrder></FaJediOrder>
+            <FaJediOrder className="text-purple-600"></FaJediOrder>
             My Order
           </span>
         </Link>
@@ -92,7 +92,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <MdRateReview></MdRateReview>
+            <MdRateReview className="text-purple-600"></MdRateReview>
             Job Apply Delivery Boy
           </span>
         </Link>
@@ -112,7 +112,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <CgProfile></CgProfile>
+            <CgProfile className="text-purple-600"></CgProfile>
             Admin Profile
           </span>
         </Link>
@@ -127,7 +127,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <FaUsers></FaUsers>
+            <FaUsers className="text-purple-600"></FaUsers>
             Users Manage
           </span>
         </Link>
@@ -142,7 +142,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <FaBoxOpen></FaBoxOpen>
+            <FaBoxOpen className="text-purple-600"></FaBoxOpen>
             Product Manage
           </span>
         </Link>
@@ -156,7 +156,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <FaSignsPost></FaSignsPost>
+            <FaSignsPost className="text-purple-600"></FaSignsPost>
             Blog Manage
           </span>
         </Link>
@@ -170,7 +170,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <FaFirstOrder></FaFirstOrder>
+            <FaFirstOrder className="text-purple-600"></FaFirstOrder>
             Orders Manage
           </span>
         </Link>
@@ -185,7 +185,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <FaUser></FaUser>
+            <FaUser className="text-purple-600"></FaUser>
             Delivery Boy
           </span>
         </Link>
@@ -201,7 +201,7 @@ const DashboardLayout = ({ children }) => {
             }`}
           >
             {" "}
-            <FaBriefcase></FaBriefcase>
+            <FaBriefcase className="text-purple-600"></FaBriefcase>
             Job Application Manage
           </span>
         </Link>
@@ -216,7 +216,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <GiReturnArrow />
+            <GiReturnArrow className="text-purple-600" />
             Return Order
           </span>
         </Link>
@@ -236,7 +236,8 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <CgProfile></CgProfile>Delivery Men Profile
+            <CgProfile className="text-purple-600"></CgProfile>Delivery Men
+            Profile
           </span>
         </Link>
       </li>
@@ -251,7 +252,7 @@ const DashboardLayout = ({ children }) => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
             }`}
           >
-            <CgProfile></CgProfile>Manage Return
+            <CgProfile className="text-purple-600"></CgProfile>Manage Return
           </span>
         </Link>
       </li>
@@ -294,7 +295,7 @@ const DashboardLayout = ({ children }) => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu w-64 min-h-full text-white bg-[#0D0D21] flex justify-between">
+          <ul className="menu w-64 min-h-full sticky top-0 overflow-y-auto text-white bg-[#0D0D21] flex justify-between">
             {/* Sidebar content here */}
             <div>
               <div>
@@ -328,7 +329,7 @@ const DashboardLayout = ({ children }) => {
                         : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
                     }`}
                   >
-                    <FaHome></FaHome>Home
+                    <FaHome className="text-purple-600"></FaHome>Home
                   </span>
                 </Link>
               </li>
@@ -349,7 +350,7 @@ const DashboardLayout = ({ children }) => {
                     href={"/login"}
                   >
                     <span className="">
-                      <MdLogin></MdLogin>
+                      <MdLogin className="text-purple-600"></MdLogin>
                     </span>
                     Login
                   </Link>

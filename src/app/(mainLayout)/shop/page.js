@@ -6,7 +6,6 @@ import Container from "@/components/share/Container";
 import useProducts from "@/components/hooks/useProducts";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import ProductCard from "./ProductCard";
-import ContactUs from "../contactUs/page";
 import useCart from "@/components/hooks/useCart";
 
 const Shop = () => {
@@ -222,7 +221,7 @@ const Shop = () => {
         </Tabs>
       </Container>
 
-      <ContactUs />
+      {/* <ContactUs /> */}
     </div>
   );
 };

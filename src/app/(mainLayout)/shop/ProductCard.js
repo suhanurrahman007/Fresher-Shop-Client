@@ -32,7 +32,7 @@ const ProductCard = ({ item, refetch }) => {
   };
 
   return (
-    <div className="max-w-[350px] transition-transform duration-300 transform hover:scale-105">
+    <div className="max-w-[350px] transition-transform duration-300 shadow-lg shadow-blue-950 transform hover:scale-105">
       <div className="pb-4 shadow-lg font-sans rounded-xl space-y-4 mx-auto bg-[#0D0D21]">
         <div className="flex justify-center w-full h-48 lg:h-[200px] relative">
           <div className="flex justify-between items-center left-4 right-4 top-4 absolute">

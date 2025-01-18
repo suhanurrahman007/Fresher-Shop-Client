@@ -1,6 +1,4 @@
 "use client";
-import React, { useState } from "react";
-import { FaHandHoldingDollar } from "react-icons/fa6";
 import useAuth from "@/components/hooks/useAuth";
 import DeliveryStats from "@/components/Dashboard/DaliveryMen/DeliveryMenProfile/DeliveryStats/DeliveryStats";
 import ProductOverview from "@/components/Dashboard/DaliveryMen/DeliveryMenProfile/ProductOverview/ProductOverview";

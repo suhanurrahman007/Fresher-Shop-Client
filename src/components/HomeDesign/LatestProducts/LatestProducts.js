@@ -11,48 +11,48 @@ const LatestProducts = () => {
   const [latestProducts] = useLatestProducts();
   console.log(latestProducts);
   return (
-    <div>
-      <Container>
-        <div className="text-2xl font-extrabold text-purple-300 mt-8">
-          <h2>Latest Products</h2>
-        </div>
+    <div className="px-7 max-w-[2520px]  text-white mb-5">
+      {/* <Container> */}
+      <div className="text-2xl mb-5 font-extrabold text-purple-300">
+        <h2>Latest Products</h2>
+      </div>
 
-        <div>
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination, Autoplay]}
-            className="mySwiper"
-            autoplay={{ delay: 4000 }}
-            autoHeight={true}
-            breakpoints={{
-              // when window width is >= 640px
-              375: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              // when window width is >= 768px
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-              },
-            }}
-          >
-            {latestProducts?.map((item) => (
-              <SwiperSlide key={item?._id}>
-                <ProductCard item={item} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </Container>
+      <div>
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination, Autoplay]}
+          className="mySwiper"
+          autoplay={{ delay: 4000 }}
+          autoHeight={true}
+          breakpoints={{
+            // when window width is >= 640px
+            375: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }}
+        >
+          {latestProducts?.map((item) => (
+            <SwiperSlide key={item?._id}>
+              <ProductCard item={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      {/* </Container> */}
     </div>
   );
 };

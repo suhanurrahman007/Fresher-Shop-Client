@@ -2,12 +2,7 @@
 import useAuth from "@/components/hooks/useAuth";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  FaHome,
-  FaUserTag,
-  FaServicestack,
-  FaBlog,
-} from "react-icons/fa";
+import { FaHome, FaUserTag, FaServicestack, FaBlog } from "react-icons/fa";
 import { BiLogOut, BiSolidDashboard } from "react-icons/bi";
 import { MdLogin, MdCalculate } from "react-icons/md";
 import { FaShopify } from "react-icons/fa";
@@ -33,7 +28,7 @@ const Navbar = () => {
             }`}
           >
             <span className="mr-1">
-              <FaHome />
+              <FaHome className="text-purple-600" />
             </span>
             Home
           </span>
@@ -49,9 +44,9 @@ const Navbar = () => {
             }`}
           >
             <span className="mr-1">
-              <FaShopify />
+              <FaShopify className="text-purple-600" />
             </span>
-            Shop
+            Our Shop
           </span>
         </Link>
       </li>
@@ -65,7 +60,7 @@ const Navbar = () => {
             }`}
           >
             <span className="mr-1">
-              <FaServicestack className="text-red-700" />
+              <FaServicestack className="text-purple-600" />
             </span>
             Our Brand
           </span>
@@ -81,9 +76,9 @@ const Navbar = () => {
             }`}
           >
             <span className="mr-1">
-              <FaBlog />
+              <FaBlog className="text-purple-600" />
             </span>
-            Blog
+            Blogs
           </span>
         </Link>
       </li>
@@ -97,7 +92,7 @@ const Navbar = () => {
             }`}
           >
             <span className="mr-1">
-              <FaUserTag />
+              <FaUserTag className="text-purple-600" />
             </span>
             Help & Support
           </span>
@@ -114,7 +109,7 @@ const Navbar = () => {
             }`}
           >
             <span className="mr-1">
-              <MdCalculate className="text-purple-700" />
+              <MdCalculate className="text-purple-600" />
             </span>
             Contact Us
           </span>
@@ -130,7 +125,7 @@ const Navbar = () => {
                 : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
             }`}
           >
-            <CartShop />
+            <CartShop className="text-purple-600" />
           </span>
         </Link>
       </li>
@@ -236,7 +231,7 @@ const Navbar = () => {
                 <hr className="border-gray-600" />
                 <Link className="hover:font-bold flex items-center" href={"/"}>
                   <span className="mr-1">
-                    <FaHome />
+                    <FaHome className="text-purple-600" />
                   </span>
                   Home
                 </Link>
@@ -248,7 +243,7 @@ const Navbar = () => {
                       href={"/dashboard/myProfile"}
                     >
                       <span className="mr-1">
-                        <BiSolidDashboard />
+                        <BiSolidDashboard className="text-purple-600" />
                       </span>
                       Dashboard
                     </Link>
@@ -263,7 +258,7 @@ const Navbar = () => {
                     className="hover:font-bold flex items-center text-left"
                   >
                     <span className="mr-1">
-                      <BiLogOut />
+                      <BiLogOut className="text-purple-600" />
                     </span>
                     Logout
                   </button>
@@ -273,7 +268,7 @@ const Navbar = () => {
                     href={"/signIn"}
                   >
                     <span className="mr-1">
-                      <MdLogin />
+                      <MdLogin className="text-purple-600" />
                     </span>
                     Login
                   </Link>
