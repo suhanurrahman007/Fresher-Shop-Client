@@ -295,7 +295,7 @@ const DashboardLayout = ({ children }) => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu w-64 min-h-full sticky top-0 overflow-y-auto text-white bg-[#0D0D21] flex justify-between">
+          <ul className="menu w-64 min-h-full text-white bg-[#0D0D21] flex justify-between">
             {/* Sidebar content here */}
             <div>
               <div>

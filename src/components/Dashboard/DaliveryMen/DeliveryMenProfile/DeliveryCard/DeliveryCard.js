@@ -37,7 +37,11 @@ const DeliveryCard = () => {
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="relative group">
                 <Image
-                  src={user?.photoURL}
+                  src={
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://i.ibb.co.com/K2JPnyv/avatar.png"
+                  }
                   width={500}
                   height={500}
                   className="size-[50px] bg-slate-500 object-cover rounded-full border-[2px] border-blue-600"
@@ -53,15 +57,15 @@ const DeliveryCard = () => {
             </label>
             <div className="ml-3">
               <p className="text-white font-semibold hover:text-blue-700 hover:underline">
-                {user?.displayName}
+                {user?.displayName ? user?.displayName : "Non User"}
               </p>
               <p className="text-gray-400 text-sm">{"Delivery Boy"}</p>
             </div>
             <span
               className={`ml-auto w-3 h-3 rounded-full ${
-                user.status === "online"
+                user === "online"
                   ? "bg-green-500"
-                  : user.status === "away"
+                  : user?.status === "away"
                   ? "bg-orange-500"
                   : "bg-green-500"
               }`}
