@@ -32,6 +32,7 @@ const DeliveryStats = () => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {stats.map((stat, index) => (
         <div
+          data-aos="zoom-in-up"
           key={index}
           className={`flex justify-center items-center space-x-5 bg-gradient-to-br ${stat.gradient} px-8 py-8 rounded-lg shadow-lg shadow-blue-950 transform transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-950`}
         >

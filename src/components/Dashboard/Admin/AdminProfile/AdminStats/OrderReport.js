@@ -3,7 +3,9 @@ import UserChart from "../UserChart/UserChart";
 
 const OrderReport = () => {
     return (
-      <div className="p-4 bg-[#0D0D21] shadow-lg shadow-blue-950 h-44 rounded-md m-0">
+      <div
+        className="p-4 bg-[#0D0D21] shadow-lg shadow-blue-950 h-44 rounded-md m-0"
+      >
         <div className="flex items-center gap-2 mb-0">
           <h2 className="text-md font-semibold">Total Customers</h2>
           <BsFillQuestionOctagonFill

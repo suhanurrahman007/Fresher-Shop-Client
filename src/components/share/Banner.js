@@ -16,7 +16,10 @@ export function Banner({title}) {
           particleColor="#FFFFFF"
         />
       </div>
-      <h1 className="md:text-5xl text-3xl lg:text-4xl font-bold text-center text-white relative z-20">
+      <h1
+        data-aos="zoom-in"
+        className="md:text-5xl text-3xl lg:text-4xl font-bold text-center text-white relative z-20"
+      >
         {title}
       </h1>
     </div>

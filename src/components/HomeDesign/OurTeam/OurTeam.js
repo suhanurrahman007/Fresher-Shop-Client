@@ -11,7 +11,7 @@ import Image from "next/image";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import SectionTitle from "@/components/share/SectionTitle";
 import Container from "@/components/share/Container";
-import "./OurTeam.css"
+import "./OurTeam.css";
 
 const OurTeams = () => {
   return (

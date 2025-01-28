@@ -7,7 +7,11 @@ export default function LatestSelect() {
   const options = ["Newest", "Oldest"];
 
   return (
-    <div className="relative w-64 mb-5">
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      className="relative w-64 mb-5"
+    >
       {/* Dropdown Button */}
       <div
         onClick={() => setIsOpen(!isOpen)}

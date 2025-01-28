@@ -7,6 +7,7 @@ const Gallery = () => {
         <div class="flex w-1/2 flex-wrap">
           <div class="w-1/2 p-1 md:p-2">
             <Image
+              data-aos="zoom-in-up"
               height={200}
               width={200}
               alt="gallery"
@@ -16,6 +17,7 @@ const Gallery = () => {
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <Image
+              data-aos="zoom-out-up"
               height={200}
               width={200}
               alt="gallery"
@@ -25,6 +27,7 @@ const Gallery = () => {
           </div>
           <div class="w-full p-1 md:p-2">
             <Image
+              data-aos="zoom-in-up"
               height={200}
               width={200}
               alt="gallery"
@@ -36,6 +39,7 @@ const Gallery = () => {
         <div class="flex w-1/2 flex-wrap">
           <div class="w-full p-1 md:p-2">
             <Image
+              data-aos="zoom-out-up"
               height={200}
               width={200}
               alt="gallery"
@@ -45,6 +49,7 @@ const Gallery = () => {
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <Image
+              data-aos="zoom-in-up"
               height={200}
               width={200}
               alt="gallery"
@@ -54,6 +59,7 @@ const Gallery = () => {
           </div>
           <div class="w-1/2 p-1 md:p-2">
             <Image
+              data-aos="zoom-out-up"
               height={200}
               width={200}
               alt="gallery"

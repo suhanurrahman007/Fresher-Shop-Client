@@ -19,6 +19,7 @@ import ActiveUsers from "@/components/Dashboard/Admin/AdminProfile/ActiveUser/Ac
 import AdminFooter from "@/components/Dashboard/Admin/AdminProfile/ActiveUser/AdminFooter";
 import Weather from "@/components/Dashboard/Admin/AdminProfile/AdminStats/Weather";
 import OrderReport from "@/components/Dashboard/Admin/AdminProfile/AdminStats/OrderReport";
+import { Helmet } from "react-helmet";
 
 const AdminProfile = () => {
   const { user } = useAuth();
@@ -26,6 +27,9 @@ const AdminProfile = () => {
 
   return (
     <div className="p-4 text-white space-y-9 overflow-y-auto">
+      <Helmet>
+        <title>Admin Profile - Fresher Shop</title>
+      </Helmet>
       <h2 className="text-2xl text-purple-300 font-bold -mb-4">
         Hi, <span className="text-orange-700">{displayName}</span> Welcome Back!
       </h2>
@@ -37,7 +41,10 @@ const AdminProfile = () => {
       </div>
 
       <div className="container m-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="p-4 bg-[#0D0D21] shadow-lg shadow-blue-950 space-y-3 rounded-md">
+        <div
+          data-aos="zoom-in-up"
+          className="p-4 bg-[#0D0D21] shadow-lg shadow-blue-950 space-y-3 rounded-md"
+        >
           {/* Header Section */}
           <div className="flex justify-between items-center">
             <h2 className="text-md font-semibold text-white">Report</h2>
@@ -52,7 +59,10 @@ const AdminProfile = () => {
           </div>
         </div>
         {/* Total Customers Card */}
-        <div className="p-4 bg-[#0D0D21] shadow-lg shadow-blue-950 space-y-3 rounded-md">
+        <div
+          data-aos="zoom-in-up"
+          className="p-4 bg-[#0D0D21] shadow-lg shadow-blue-950 space-y-3 rounded-md"
+        >
           {/* Header Section */}
           <div className="flex justify-between items-center">
             <h2 className="text-md font-semibold text-white">Report</h2>
@@ -87,7 +97,7 @@ const AdminProfile = () => {
       </div>
       <div className="container m-auto">
         <ActiveUsers />
-        <AdminFooter />
+        {/* <AdminFooter /> */}
       </div>
     </div>
   );

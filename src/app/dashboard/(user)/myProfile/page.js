@@ -17,7 +17,10 @@ const MyProfile = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div className="flex justify-center items-center space-x-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-8 py-8 rounded-lg">
+        <div
+          data-aos="zoom-in-up"
+          className="flex justify-center items-center space-x-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-8 py-8 rounded-lg"
+        >
           <span className="text-5xl">
             <SiTask></SiTask>
           </span>
@@ -27,7 +30,10 @@ const MyProfile = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center space-x-5 bg-gradient-to-r from-[#D3A256] to-[#FDE8C0] px-8 py-8 rounded-lg">
+        <div
+          data-aos="zoom-out-up"
+          className="flex justify-center items-center space-x-5 bg-gradient-to-r from-[#D3A256] to-[#FDE8C0] px-8 py-8 rounded-lg"
+        >
           <span className="text-5xl">
             <FaUserFriends></FaUserFriends>
           </span>
@@ -37,7 +43,10 @@ const MyProfile = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center space-x-5 bg-gradient-to-r from-[#FE4880] to-[#FECDE9] px-8 py-8 rounded-lg">
+        <div
+          data-aos="zoom-in-up"
+          className="flex justify-center items-center space-x-5 bg-gradient-to-r from-[#FE4880] to-[#FECDE9] px-8 py-8 rounded-lg"
+        >
           <span className="text-5xl">
             <FaCommentDots></FaCommentDots>
           </span>
@@ -48,10 +57,14 @@ const MyProfile = () => {
         </div>
       </div>
 
-      <div className="lg:flex px-2 lg:flex-col lg:justify-center lg:items-center shadow-xl rounded-2xl">
+      <div
+        data-aos="zoom-in-up"
+        className="lg:flex px-2 lg:flex-col lg:justify-center lg:items-center shadow-xl rounded-2xl"
+      >
         <div className="h-24 lg:w-2/3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
         <div className="h-72 lg:w-2/3 flex flex-col justify-center items-center">
           <Image
+            data-aos="flip-up"
             className="w-20 rounded-full lg:-mt-36"
             src={
               user?.photoURL

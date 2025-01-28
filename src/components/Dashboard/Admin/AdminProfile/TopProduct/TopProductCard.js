@@ -5,7 +5,7 @@ const TopProductCard = () => {
   const [order, refetch] = useOrder();
 
   return (
-    <div>
+    <div data-aos="zoom-in-up">
       <div className="overflow-x-auto">
         <table className="w-full shadow-md mx-auto my-6">
           <tbody>

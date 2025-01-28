@@ -23,6 +23,7 @@ import toast from "react-hot-toast";
 import useCart from "@/components/hooks/useCart";
 import RatingCard from "./RatingCard";
 import useRating from "@/components/hooks/useRating";
+import { Helmet } from "react-helmet";
 
 const ProductDetails = ({ params }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -73,6 +74,9 @@ const ProductDetails = ({ params }) => {
     <>
       <Container>
         <div className="mt-[77px]">
+          <Helmet>
+            <title>Product Details - Fresher Shop</title>
+          </Helmet>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 py-10">
             <div className="lg:col-span-4">
               <Swiper
@@ -89,6 +93,7 @@ const ProductDetails = ({ params }) => {
               >
                 <SwiperSlide>
                   <Image
+                    data-aos="zoom-in-up"
                     className="w-full h-80 rounded-md mb-3 shadow-[#000C21] shadow-lg transition-transform duration-300 ease-in-out hover:scale-150"
                     alt={findProduct?.name || "Product Image"}
                     width={500}
@@ -121,7 +126,12 @@ const ProductDetails = ({ params }) => {
             <div className="lg:col-span-5">
               <div className="w-full space-y-4 rounded-xl p-4 shadow-lg">
                 <div className="space-y-2 font-semibold">
-                  <h6 className="text-sm md:text-base lg:text-lg">
+                  <h6
+                    data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    className="text-sm md:text-base lg:text-lg"
+                  >
                     {findProduct?.product_name}
                   </h6>
                   <ProductDescription findProduct={findProduct} />
@@ -129,7 +139,7 @@ const ProductDetails = ({ params }) => {
                     findProduct={findProduct}
                     ratingsRefetch={ratingsRefetch}
                   />
-                  <p>
+                  <p data-aos="zoom-in-up">
                     <span className="text-gray-700 mr-4 line-through">
                       ${findProduct?.price?.toFixed(2)}
                     </span>
@@ -140,7 +150,10 @@ const ProductDetails = ({ params }) => {
                   </p>
                 </div>
 
-                <div className="mt-4 flex justify-between px-4 pb-4">
+                <div
+                  data-aos="zoom-out"
+                  className="mt-4 flex justify-between px-4 pb-4"
+                >
                   <div className="flex items-center gap-2">
                     <svg
                       className="w-6 fill-[#1E293B] dark:fill-white/90"
@@ -192,6 +205,8 @@ const ProductDetails = ({ params }) => {
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-6 text-sm md:text-base">
                   <button
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
                     onClick={handleCart}
                     className="text-sm box-border border-4 border-sky-900 w-48 h-12 rounded-lg bg-sky-600 text-white relative group"
                   >

@@ -4,6 +4,7 @@ import BlogManagement from "@/components/Dashboard/Admin/Blog/BlogManagement";
 import usePosts from "@/components/hooks/usePosts";
 import ItemNavbar from "@/components/share/ItemNavbar";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -13,6 +14,9 @@ const ProductManage = () => {
 
   return (
     <div className="p-6 min-h-screen text-white overflow-y-auto">
+      <Helmet>
+        <title>Admin Blog Management - Fresher Shop</title>
+      </Helmet>
       {/* Header Section */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl text-purple-300 font-bold">Blog Management</h1>

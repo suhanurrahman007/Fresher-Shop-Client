@@ -10,7 +10,11 @@ import { FaAddressCard } from "react-icons/fa";
 export function ServiceToolsCard() {
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  items-center justify-center w-full gap-4 mx-auto px-8">
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  items-center justify-center w-full gap-4 mx-auto px-8"
+      >
         <Card title="Tracking My Order" icon={<TrackingMyOrderIcon />}>
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -92,6 +96,7 @@ const Card = ({ title, icon, children }) => {
 
   return (
     <div
+      data-aos="zoom-in-up"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2] max-w-sm w-full mx-auto p-4 relative h-32"

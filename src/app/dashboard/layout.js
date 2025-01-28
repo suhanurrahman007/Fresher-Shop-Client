@@ -24,6 +24,7 @@ import "@/components/share/Navbar/Dashboard.css";
 import useAuth from "@/components/hooks/useAuth";
 import Image from "next/image";
 import useUser from "@/components/hooks/useUser";
+import AdminFooter from "@/components/Dashboard/Admin/AdminProfile/ActiveUser/AdminFooter";
 
 const DashboardLayout = ({ children }) => {
   const { user, logout } = useAuth();
@@ -288,6 +289,7 @@ const DashboardLayout = ({ children }) => {
           </div>
           {/* Page content here */}
           {children}
+          <AdminFooter />
         </div>
         <div className="drawer-side">
           <label

@@ -6,7 +6,10 @@ export default function ItemCart({ myCart, refetch }) {
   return (
     <div>
       {myCart?.length === 0 ? (
-        <div className="text-md space-y-3 flex flex-col justify-center items-center text-gray-500 font-bold">
+        <div
+          data-aos="zoom-in-up"
+          className="text-md space-y-3 flex flex-col justify-center items-center text-gray-500 font-bold"
+        >
           <span className="text-black text-3xl">
             <FaCommentDots />
           </span>

@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import Typewriter from "typewriter-effect"; // Importing Typewriter component
 export const Carousel = () => {
   const [currentSlider, setCurrentSlider] = useState(0);
@@ -59,6 +61,9 @@ export const Carousel = () => {
     >
       {/* arrow */}
       <div className="absolute bottom-1/4 flex gap-3 z-50 px-5">
+        {/* <Helmet>
+          <title>Home - Fresher Shop</title>
+        </Helmet> */}
         {/* arrow left */}
         <button
           onClick={prevSlider}
@@ -126,13 +131,13 @@ export const Carousel = () => {
         <p className="text-xs sm:text-sm md:text-base text-justify text-sky-200 ">
           {sliders[currentSlider].des}
         </p>
-        
 
         <button
           type="button"
           className="relative rounded-xs inline-block md:h-12 md:w-52  overflow-hidden border-sky-500 px-5 py-2 mt-2 md:mt-8 text-sky-200 shadow-lg before:absolute before:inset-0 before:-z-10 before:block before:translate-x-[90%] before:rounded-s-full before:bg-sky-700 before:duration-200 after:absolute after:inset-0 after:-z-10 after:block after:-translate-x-[90%] after:rounded-e-full after:bg-sky-700 after:duration-500 hover:text-white before:hover:translate-x-0 after:hover:translate-x-0"
         >
           Explore Us
+          {/* <Link href={"/dashboard/myProfile"}>Explore Us</Link> */}
         </button>
       </div>
       {/* slider container */}

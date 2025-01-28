@@ -24,8 +24,12 @@ import DarkCalendar from "@/components/share/Calendar/Calendar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CommentCard } from "./CommentCard";
-import { BottomGradient, LabelInputContainer } from "@/components/ui/LabelInputContainer";
+import {
+  BottomGradient,
+  LabelInputContainer,
+} from "@/components/ui/LabelInputContainer";
 import { format } from "date-fns";
+import { Helmet } from "react-helmet";
 
 const BlogDetails = ({ params }) => {
   const publicAxios = usePublicAxios();
@@ -54,7 +58,7 @@ const BlogDetails = ({ params }) => {
       image: user?.photoURL,
       comment: data?.comment,
       postId: params?.postId,
-      like: 0
+      like: 0,
     };
     console.log(commentInfo);
 
@@ -67,29 +71,51 @@ const BlogDetails = ({ params }) => {
   };
   return (
     <div className="max-w-[2520px] grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mx-auto lg:px-20 md:px-10 sm:px-2 px-4 py-28 ">
+      <Helmet>
+        <title>Blog Details - Fresher Shop</title>
+      </Helmet>
       <div className="lg:col-span-2 space-y-10">
         <div>
           <div className="">
-            <h2 className="text-2xl font-bold text-white text-justify">
+            <h2
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="text-2xl font-bold text-white text-justify"
+            >
               {findPost?.title}
             </h2>
-            <p className="text-sm text-gray-400 text-justify mt-2 my-4">
-              {findPost?.time ? format(new Date(findPost?.time), "dd MMM yyyy") : "N/A"}{" "}
+            <p
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="text-sm text-gray-400 text-justify mt-2 my-4"
+            >
+              {findPost?.time
+                ? format(new Date(findPost?.time), "dd MMM yyyy")
+                : "N/A"}{" "}
               <span className="px-2">|</span>{" "}
               <span>{filterComments?.length} Comments</span>
             </p>
             <Image
+              data-aos="zoom-out-up"
               className="w-full h-96"
               src={findPost?.image}
               alt="findPost"
               height={20}
               width={600}
             ></Image>
-            <p className="text-sm text-justify text-gray-400 py-7">
+            <p
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="text-sm text-justify text-gray-400 py-7"
+            >
               {findPost?.description}
             </p>
 
-            <p className="text-sm text-justify text-gray-400 ">
+            <p
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="text-sm text-justify text-gray-400 "
+            >
               {" "}
               Pellentesque habitant morbi tristique senectus et netus et
               malesuada fames ac turpis egestas.Ut tristique pretium tellus, sed
@@ -106,7 +132,11 @@ const BlogDetails = ({ params }) => {
               sollicitudin.Sed fringilla malesuada luctus.
             </p>
 
-            <div className="flex justify-between py-10">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="flex justify-between py-10"
+            >
               <div className="space-y-2">
                 <p className="text-sm text-blue-600">
                   Tags:{" "}
@@ -120,17 +150,26 @@ const BlogDetails = ({ params }) => {
                 </p>
               </div>
 
-              <div className="flex gap-4 items-center">
+              <div
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+                className="flex gap-4 items-center"
+              >
                 <FaFacebook className="text-blue-600 text-3xl transform hover:scale-110 transition-transform duration-300" />
                 <FaInstagram className="text-pink-600 text-3xl transform hover:scale-110 transition-transform duration-300" />
                 <FaTwitter className="text-blue-400 text-3xl transform hover:scale-110 transition-transform duration-300" />
               </div>
             </div>
           </div>
-          <div className="hero bg-[#000C21]">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="hero bg-[#000C21]"
+          >
             <div className="hero-content">
               {user?.photoURL ? (
                 <Image
+                  data-aos="flip-up"
                   className="rounded-sm"
                   src={user?.photoURL}
                   alt="images"
@@ -139,6 +178,7 @@ const BlogDetails = ({ params }) => {
                 ></Image>
               ) : (
                 <Image
+                  data-aos="flip-up"
                   className="rounded-sm"
                   src={profileImg}
                   alt="images"
@@ -160,17 +200,29 @@ const BlogDetails = ({ params }) => {
             </div>
           </div>
 
-          <hr className="border-gray-800 mt-10" />
+          <hr
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="border-gray-800 mt-10"
+          />
 
           <div>
-            <h2 className="text-3xl font-bold text-gray-700 text-center py-7">
+            <h2
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="text-3xl font-bold text-gray-700 text-center py-7"
+            >
               {" "}
               <span>{filterComments?.length}</span> Comments Here
             </h2>
 
             <div>
               {filterComments.length == 0 ? (
-                <div className="text-md space-y-3  flex flex-col justify-center items-center text-gray-500 font-bold">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  className="text-md space-y-3  flex flex-col justify-center items-center text-gray-500 font-bold"
+                >
                   <span className="text-black text-3xl">
                     <FaCommentDots></FaCommentDots>
                   </span>
@@ -184,13 +236,23 @@ const BlogDetails = ({ params }) => {
             </div>
           </div>
 
-          <hr className="border-gray-800 mt-10" />
+          <hr
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="border-gray-800 mt-10"
+          />
 
           <div>
-            <h2 className="text-3xl font-bold text-white text-center py-7">
+            <h2
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="text-3xl font-bold text-white text-center py-7"
+            >
               Add Comment
             </h2>
             <form
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
               onSubmit={handleSubmit(onSubmit)}
               className="card-body shadow-lg bg-black"
             >
@@ -246,7 +308,7 @@ const BlogDetails = ({ params }) => {
       </div>
 
       <div className="lg:col-span-1 bg-[#000C21] w-full mt-7 px-8 py-6 space-y-5 rounded-md">
-        <div>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <h2 className="py-5 text-2xl text-white font-bold">Search</h2>
 
           <div className="flex items-center">
@@ -260,7 +322,7 @@ const BlogDetails = ({ params }) => {
             </button>
           </div>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <h2 className="py-5 text-2xl text-white font-bold">Category</h2>
           <div className="space-y-3">
             <div className="flex items-center text-justify text-sm">
@@ -329,18 +391,35 @@ const BlogDetails = ({ params }) => {
         </div>
 
         <div>
-          <h2 className="py-5 text-2xl text-white font-bold">Calendar</h2>
+          <h2
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="py-5 text-2xl text-white font-bold"
+          >
+            Calendar
+          </h2>
 
           <DarkCalendar />
         </div>
 
         <div>
-          <h2 className="py-5 text-2xl text-white font-bold">Latest Posts</h2>
+          <h2
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="py-5 text-2xl text-white font-bold"
+          >
+            Latest Posts
+          </h2>
           {latestPosts?.map((item) => (
-            <div key={item?._id}>
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              key={item?._id}
+            >
               <div className="hero">
                 <div className="hero-content">
                   <Image
+                    data-aos="flip-up"
                     className="rounded-sm w-24 h-14"
                     src={item?.image}
                     alt="images"
@@ -365,8 +444,17 @@ const BlogDetails = ({ params }) => {
         </div>
 
         <div>
-          <h2 className="py-5 text-2xl text-white font-bold">Popular Tags</h2>
-          <div className="bg-[#010313] grid grid-cols-2 gap-4 p-4 rounded-sm">
+          <h2
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="py-5 text-2xl text-white font-bold"
+          >
+            Popular Tags
+          </h2>
+          <div
+            data-aos="zoom-out-up"
+            className="bg-[#010313] grid grid-cols-2 gap-4 p-4 rounded-sm"
+          >
             <Link
               href={`/blog`}
               className="bg-blue-800 hover:text-white hover:bg-purple-700 text-white font-bold py-3 w-full px-8 text-xs rounded-full"

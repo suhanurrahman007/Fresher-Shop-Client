@@ -11,7 +11,10 @@ const BandwidthSaved = () => {
   const COLORS = ["#374151", "#3B82F6"]; // Gray for used, Blue for saved
 
   return (
-    <div className="bg-[rgb(13,13,33)] p-4 space-y-5 shadow-blue-950 rounded-lg shadow-lg flex flex-col items-center">
+    <div
+      data-aos="zoom-in-up"
+      className="bg-[rgb(13,13,33)] p-4 space-y-5 shadow-blue-950 rounded-lg shadow-lg flex flex-col items-center"
+    >
       <div className="flex justify-between items-center">
         <h2 className="text-md font-semibold text-white">Bandwidth Saved</h2>
       </div>

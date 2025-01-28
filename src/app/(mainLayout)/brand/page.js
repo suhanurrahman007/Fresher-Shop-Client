@@ -4,6 +4,7 @@ import { BrandCard } from "./BrandCard";
 import useBrands from "@/components/hooks/useBrands";
 import SectionTitle from "@/components/share/SectionTitle";
 import Container from "@/components/share/Container";
+import { Helmet } from "react-helmet";
 
 const Brand = () => {
   const [brands] = useBrands();
@@ -11,6 +12,9 @@ const Brand = () => {
 
   return (
     <div className="mt-20 mb-10 flex justify-center items-center">
+      <Helmet>
+        <title>Brand - Fresher Shop</title>
+      </Helmet>
       <Container>
         <SectionTitle
           header={"Our Brands"}

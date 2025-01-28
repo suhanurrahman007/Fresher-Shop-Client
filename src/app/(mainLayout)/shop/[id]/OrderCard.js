@@ -13,6 +13,7 @@ const OrderCard = ({ discountPrice, order }) => {
         {/* top part  */}
         <div>
           <Image
+            data-aos="flip-up"
             width={60}
             height={60}
             className="h-[60px] w-[60px] rounded-full border bg-slate-100 object-cover p-2 duration-300 hover:scale-105"
@@ -20,7 +21,7 @@ const OrderCard = ({ discountPrice, order }) => {
             alt="card navigate ui"
           />
           {/* Price Ribbon SVG  */}
-          <div className="absolute -right-[20px] -top-4 ">
+          <div data-aos="zoom-in" className="absolute -right-[20px] -top-4 ">
             <div className="relative h-full w-full">
               {/* svg  */}
               <svg
@@ -76,13 +77,22 @@ const OrderCard = ({ discountPrice, order }) => {
           </div>
         </div>
         <div className="space-y-4">
-          <p className="capitalize text-gray-500 dark:text-sky-100">In-stock</p>
-          <h3 className="text-2xl font-bold text-slate-800 dark:text-[#139DFE]">
+          <p
+            data-aos="zoom-out-up"
+            className="capitalize text-gray-500 dark:text-sky-100"
+          >
+            In-stock
+          </p>
+          <h3
+            data-aos="flip-up"
+            className="text-2xl font-bold text-slate-800 dark:text-[#139DFE]"
+          >
             Advance
           </h3>
           <ul className="space-y-3">
             {listArray?.map((each, idx) => (
               <li
+                data-aos="fade-right"
                 key={idx}
                 className="flex items-center gap-2 text-sm font-semibold text-sky-900 dark:text-[#4BB3FF]"
               >

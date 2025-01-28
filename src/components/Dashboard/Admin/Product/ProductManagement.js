@@ -20,6 +20,7 @@ const ProductManagement = ({ products, refetch }) => {
           <tbody>
             {products?.map((item) => (
               <tr
+                data-aos="zoom-in"
                 key={item?._id}
                 className="hover:bg-[#0D0D21] transition duration-300"
               >
@@ -68,7 +69,7 @@ const ProductManagement = ({ products, refetch }) => {
                   })}
                 </td>
                 <td className="py-4 px-6 border-b border-b-gray-800 text-end">
-                  <ProductDotButton productId={item?._id} refetch={refetch}/>
+                  <ProductDotButton productId={item?._id} refetch={refetch} />
                 </td>
               </tr>
             ))}

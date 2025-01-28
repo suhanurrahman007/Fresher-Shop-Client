@@ -116,7 +116,11 @@ export function CommentCard({ cards, refetch }) {
         )}
       </AnimatePresence>
 
-      <ul className="max-w-2xl mx-auto w-full gap-4 space-y-3">
+      <ul
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        className="max-w-2xl mx-auto w-full gap-4 space-y-3"
+      >
         {cards?.map((card) => (
           <motion.div
             key={`card-${card.name}-${id}`}

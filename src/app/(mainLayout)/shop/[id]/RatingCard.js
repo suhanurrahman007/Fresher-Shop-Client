@@ -94,14 +94,23 @@ const RatingCard = ({ ratingsRefetch, filterRatings }) => {
       {/* Left: Review List */}
       <div className="lg:w-2/3">
         <LatestSelect />
-        <hr className="border-neutral-900 my-3" />
+        <hr
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          className="border-neutral-900 my-3"
+        />
         <ul className="w-full space-y-3">
           {filterRatings?.map((card, index) => (
             <React.Fragment key={card._id}>
               {index !== 0 && <hr className="border-neutral-900 my-3" />}
               <motion.div className="p-3 bg-[#010313] flex justify-between rounded-md hover:bg-[#000C21]">
-                <div className="flex gap-4">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  className="flex gap-4"
+                >
                   <Image
+                    data-aos="flip-up"
                     width={240}
                     height={240}
                     src={card?.image}
@@ -157,7 +166,11 @@ const RatingCard = ({ ratingsRefetch, filterRatings }) => {
       {/* Right: Rating Statistics */}
       <div className="lg:w-1/3 p-5 space-y-3">
         <div className="flex justify-between items-center">
-          <div className="flex space-x-1">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className="flex space-x-1"
+          >
             {[1, 2, 3, 4, 5].map((star) => (
               <svg
                 key={star}
@@ -176,7 +189,12 @@ const RatingCard = ({ ratingsRefetch, filterRatings }) => {
         {Object.entries(starCounts)
           .sort(([starA], [starB]) => Number(starB) - Number(starA)) // Sort by stars in descending order
           .map(([star, count]) => (
-            <div key={star} className="flex gap-3 items-center">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              key={star}
+              className="flex gap-3 items-center"
+            >
               <p className="text-gray-500 flex">{star}★</p>
               <InsidePercentageProgress percentage={starPercentages[star]} />
               <p className="font-bold text-gray-400">{count}</p>

@@ -5,7 +5,10 @@ import UserChart from "../UserChart/UserChart";
 
 const Weather = () => {
   return (
-    <div className="p-4 bg-[#0D0D21] shadow-lg shadow-blue-950 space-y-3 h-44 rounded-md">
+    <div
+      data-aos="zoom-in-up"
+      className="p-4 bg-[#0D0D21] shadow-lg shadow-blue-950 space-y-3 h-44 rounded-md"
+    >
       {/* Header Section */}
       <div className="flex justify-between items-center">
         <h2 className="text-md font-semibold text-white">Weather</h2>

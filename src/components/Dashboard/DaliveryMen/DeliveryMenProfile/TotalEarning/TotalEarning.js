@@ -5,7 +5,10 @@ import { FaHandHoldingDollar } from "react-icons/fa6";
 
 const TotalEarning = () => {
   return (
-    <div className="bg-[#0D0D21] rounded-lg p-4 shadow-lg shadow-blue-950">
+    <div
+      data-aos="zoom-in-up"
+      className="bg-[#0D0D21] rounded-lg p-4 shadow-lg shadow-blue-950"
+    >
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-white font-bold">Total Earning</h3>

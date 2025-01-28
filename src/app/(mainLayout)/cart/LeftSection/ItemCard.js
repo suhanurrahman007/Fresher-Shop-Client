@@ -7,8 +7,14 @@ import { MdDelete } from "react-icons/md";
 import usePublicAxios from "@/components/hooks/usePublicAxios";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import Aos from "aos";
 
 export function ItemCard({ cards, refetch }) {
+  //  useEffect(() => {
+  //    Aos.init({
+  //      duration: 1000,
+  //    });
+  //  }, []);
   const [active, setActive] = useState(null);
   const ref = useRef(null);
   const id = useId();
@@ -67,7 +73,11 @@ export function ItemCard({ cards, refetch }) {
             key={`card-${card.productName}-${id}`}
             className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-[#010313] rounded-xl cursor-pointer"
           >
-            <div className="flex items-center gap-4 flex-col md:flex-row ">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="flex items-center gap-4 flex-col md:flex-row "
+            >
               <motion.h3 className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left">
                 <input
                   type="checkbox"
@@ -77,6 +87,7 @@ export function ItemCard({ cards, refetch }) {
               </motion.h3>
               <motion.div>
                 <Image
+                  data-aos="flip-up"
                   width={240}
                   height={240}
                   src={card?.productImage}

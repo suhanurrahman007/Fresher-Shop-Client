@@ -10,7 +10,6 @@ import useAuth from "@/components/hooks/useAuth";
 
 export default function Job({ refetch }) {
   const publicAxios = usePublicAxios();
-  const {user} = useAuth()
 
   const {
     register,
@@ -21,8 +20,8 @@ export default function Job({ refetch }) {
   const onSubmit = async (data) => {
     // Create product object
     const jobInfo = {
-      fullName: user?.displayName,
-      email: user?.email,
+      fullName: data?.name,
+      email: data?.email,
       age: data?.age,
       address: data?.address,
       experience: data?.experience,
@@ -69,7 +68,7 @@ export default function Job({ refetch }) {
                   <Input
                     id="name"
                     {...register("name", { required: true })}
-                    defaultValue={user?.displayName ? user?.displayName : ""}
+                    // defaultValue={user?.displayName ? user?.displayName : ""}
                     placeholder="Enter Your Full Name"
                     type="text"
                   />
@@ -102,8 +101,9 @@ export default function Job({ refetch }) {
                   <Input
                     id="email"
                     {...register("email", { required: true })}
-                    defaultValue={user?.email ? user?.email : ""}
-                    disabled
+                    // defaultValue={user?.email ? user?.email : ""}
+                    // disabled
+                    placeholder="example@gmail.com"
                     type="email"
                   />
                 </LabelInputContainer>

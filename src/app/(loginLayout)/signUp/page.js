@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/LabelInputContainer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
@@ -71,7 +72,13 @@ export default function SignUp() {
   return (
     <>
       <div className="flex items-center justify-center py-8">
-        <div className="max-w-3xl bg-white p-6 shadow-md sm:px-8 sm:py-10 lg:px-12 lg:py-10 dark:bg-[#0D0D21]">
+        <Helmet>
+          <title>Sign Up | Fresher Shop</title>
+        </Helmet>
+        <div
+          data-aos="zoom-in-up"
+          className="max-w-3xl bg-white p-6 shadow-md sm:px-8 sm:py-10 lg:px-12 lg:py-10 dark:bg-[#0D0D21]"
+        >
           <div className="flex justify-center">
             <Link
               href={"/"}

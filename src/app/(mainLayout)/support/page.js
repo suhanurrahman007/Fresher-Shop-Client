@@ -3,9 +3,7 @@ import Container from "@/components/share/Container";
 import React from "react";
 import ServiceTools from "./ServiceTools/ServiceTools";
 import Faq from "@/components/HomeDesign/Faq/Faq";
-import { CategoriesCard } from "./Categories/CategoriesCard";
 import Categories from "./Categories/Categories";
-import ContactUs from "../contactUs/page";
 import Testimonial from "@/components/HomeDesign/Testimonial/Testimonial";
 
 const Support = () => {

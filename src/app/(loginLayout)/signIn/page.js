@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/LabelInputContainer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
@@ -62,7 +63,13 @@ const LoginPage = () => {
   return (
     <>
       <div className="flex h-full items-center justify-center md:p-0">
-        <div className="flex h-full w-full lg:px-24 lg:py-10 overflow-hidden rounded-xl shadow-md">
+        <Helmet>
+          <title>Login | Fresher Shop</title>
+        </Helmet>
+        <div
+          data-aos="zoom-in-up"
+          className="flex h-full w-full lg:px-24 lg:py-10 overflow-hidden rounded-xl shadow-md"
+        >
           {/* Design Side */}
           <div className="relative hidden items-center justify-center bg-blue-300 md:flex md:w-[50%]">
             <div className="absolute -top-2 left-[20%] h-16 w-16 rounded-full bg-gradient-to-br from-white via-blue-300 to-blue-400"></div>

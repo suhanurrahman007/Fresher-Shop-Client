@@ -5,7 +5,7 @@ import BasicSelect from '../Dashboard/Admin/Blog/BasicSelect';
 import TooltipRight from '../Dashboard/Admin/Product/TooltipRight';
 const ItemNavbar = ({item}) => {
     return (
-      <div className="navbar shadow-md">
+      <div data-aos="zoom-out" className="navbar shadow-md">
         <div className="flex-1 gap-3">
           <TooltipRight
             buttonName={`All - ${item?.length}`}

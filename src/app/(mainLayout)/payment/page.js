@@ -8,6 +8,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import jsPDF from "jspdf";
 import Image from "next/image";
 import React from "react";
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 
 const PaymentPage = () => {
@@ -105,6 +106,9 @@ const PaymentPage = () => {
 
   return (
     <div className="flex py-24 flex-col items-center justify-center md:flex-row">
+      <Helmet>
+        <title>Payment - Fresher Shop</title>
+      </Helmet>
       {/* Image Section */}
       <div className="group relative sm:w-[350px]">
         <Image

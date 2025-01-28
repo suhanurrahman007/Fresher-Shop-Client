@@ -22,6 +22,7 @@ const BlogManagement = ({ posts, refetch }) => {
           <tbody>
             {posts?.map((item) => (
               <tr
+                data-aos="zoom-in"
                 key={item?._id}
                 className="hover:bg-[#0D0D21] transition duration-300"
               >

@@ -109,6 +109,7 @@ const MyOrderManagement = ({ orders, refetch }) => {
           <tbody>
             {orders?.map((item) => (
               <tr
+                data-aos="zoom-in-up"
                 key={item?._id}
                 className="hover:bg-[#0D0D21] transition duration-300"
               >

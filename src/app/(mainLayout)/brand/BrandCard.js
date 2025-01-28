@@ -5,11 +5,10 @@ import Image from "next/image";
 
 export function BrandCard({ item }) {
   const [user] = useUser();
-  console.log(user);
-  console.log(item); // Check the item object in the console
+   // Check the item object in the console
 
   return (
-    <div className="max-w-xs w-full group/card">
+    <div data-aos="zoom-out-up" className="max-w-xs w-full group/card">
       <div
         className={`cursor-pointer overflow-hidden relative card h-72 rounded-md shadow-xl max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4`}
         style={{

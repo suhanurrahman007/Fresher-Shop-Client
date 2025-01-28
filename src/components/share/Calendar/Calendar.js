@@ -7,7 +7,7 @@ const DarkCalendar = () => {
   const [value, setValue] = useState(new Date());
 
   return (
-    <div className="calendar-container">
+    <div data-aos="zoom-in-up" className="calendar-container">
       <Calendar onChange={setValue} value={value} className="dark-calendar" />
     </div>
   );

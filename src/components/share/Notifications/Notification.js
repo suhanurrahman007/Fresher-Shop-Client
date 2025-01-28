@@ -116,7 +116,10 @@ const Notifications = () => {
               </div>
               <hr className="border-gray-800 my-3" />
               {/* Display icon along with "No notifications" */}
-              <div className="text-center text-lg text-gray-400 mt-10 flex items-center justify-center space-x-2">
+              <div
+                data-aos="zoom-in-up"
+                className="text-center text-lg text-gray-400 mt-10 flex items-center justify-center space-x-2"
+              >
                 {/* No notification bell icon */}
                 <svg
                   className="w-6 h-6 text-gray-500"
@@ -187,7 +190,10 @@ const Notifications = () => {
             ></label>
             <ul className="p-4 w-72 md:w-96 min-h-full bg-[#010313] text-white rounded-md shadow-lg">
               <div className="flex justify-between">
-                <h1 className="text-2xl font-extrabold text-purple-200">
+                <h1
+                  data-aos="flip-up"
+                  className="text-2xl font-extrabold text-purple-200"
+                >
                   Notifications
                 </h1>
                 <ThreeDotsModal />
@@ -199,7 +205,9 @@ const Notifications = () => {
                 ""
               ) : (
                 <div className="flex justify-between items-center mb-2">
-                  <h2 className="font-semibold">Order</h2>
+                  <h2 data-aos="flip-up" className="font-semibold">
+                    Order
+                  </h2>
                   {order?.length > 2 && (
                     <button
                       onClick={() => setShowAllOrder(!showAllOrder)}
@@ -214,7 +222,7 @@ const Notifications = () => {
                 ?.sort((a, b) => new Date(a?.data) - new Date(b?.data))
                 .slice(0, showAllOrder ? order?.length : 2)
                 .map((item) => (
-                  <div key={item?._id} className="mb-4">
+                  <div data-aos="zoom-in-up" key={item?._id} className="mb-4">
                     <div className="flex items-center space-x-4 p-3 bg-[#000C21] rounded-md hover:bg-[#010313] transition">
                       <Image
                         height={200}
@@ -255,7 +263,10 @@ const Notifications = () => {
               {payment.length === 0 ? (
                 ""
               ) : (
-                <div className="flex justify-between items-center mb-2">
+                <div
+                  data-aos="flip-up"
+                  className="flex justify-between items-center mb-2"
+                >
                   <h2 className="font-semibold">Payment</h2>
                   {payment?.length > 2 && (
                     <button
@@ -271,7 +282,7 @@ const Notifications = () => {
                 ?.sort((a, b) => new Date(a?.data) - new Date(b?.data))
                 .slice(0, showAllPayment ? payment?.length : 2)
                 .map((item) => (
-                  <div key={item?._id} className="mb-4">
+                  <div data-aos="zoom-out-up" key={item?._id} className="mb-4">
                     <div className="flex items-center space-x-4 p-3 bg-[#000C21] rounded-md hover:bg-[#010313] transition">
                       <Image
                         height={200}
@@ -312,7 +323,10 @@ const Notifications = () => {
               {filterApplication.length === 0 ? (
                 ""
               ) : (
-                <div className="flex justify-between items-center mb-2">
+                <div
+                  data-aos="flip-up"
+                  className="flex justify-between items-center mb-2"
+                >
                   <h2 className="font-semibold">Apply</h2>
                   {filterApplication?.length > 2 && (
                     <button
@@ -328,7 +342,7 @@ const Notifications = () => {
                 ?.sort((a, b) => new Date(a?.data) - new Date(b?.data))
                 .slice(0, showAllApplication ? filterApplication?.length : 2)
                 .map((item) => (
-                  <div key={item?._id} className="mb-4">
+                  <div data-aos="zoom-in-up" key={item?._id} className="mb-4">
                     <div className="flex items-center space-x-4 p-3 bg-[#000C21] rounded-md hover:bg-[#010313] transition">
                       <Image
                         height={200}

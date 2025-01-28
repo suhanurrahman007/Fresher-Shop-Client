@@ -2,7 +2,10 @@ import React from "react";
 
 const StorageCard = () => {
   return (
-    <div className="bg-gray-900 text-white p-6 rounded-lg shadow-lg shadow-blue-950 w-full">
+    <div
+      data-aos="zoom-in-up"
+      className="bg-gray-900 text-white p-6 rounded-lg shadow-lg shadow-blue-950 w-full"
+    >
       <div className="mb-4">
         <p className="text-md font-semibold">
           Using Storage <span className="text-blue-400">1775.06 MB</span> of 2

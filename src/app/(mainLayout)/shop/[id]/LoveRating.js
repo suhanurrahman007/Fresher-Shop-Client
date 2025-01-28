@@ -11,7 +11,7 @@ export default function LoveRating({ findProduct, ratingsRefetch }) {
   };
 
   return (
-    <div className="relative flex flex-col space-y-4">
+    <div data-aos="zoom-out-up" className="relative flex flex-col space-y-4">
       {/* Star Ratings */}
       <div className="flex space-x-1">
         {[1, 2, 3, 4, 5].map((star) => (

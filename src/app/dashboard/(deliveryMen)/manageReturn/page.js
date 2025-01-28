@@ -1,8 +1,10 @@
 "use client";
+import AdminFooter from "@/components/Dashboard/Admin/AdminProfile/ActiveUser/AdminFooter";
 import ManageReturn from "@/components/Dashboard/DaliveryMen/ManageReturn/ManageReturn";
 import useReturn from "@/components/hooks/useReturn";
 import ItemNavbar from "@/components/share/ItemNavbar";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -15,6 +17,9 @@ const ManageReturns = () => {
 
   return (
     <div className="p-6 min-h-screen text-white overflow-y-auto">
+      <Helmet>
+        <title>Delivery Boy Manage Return - Fresher Shop</title>
+      </Helmet>
       {/* Tabs Section */}
       <div className="rounded-lg shadow-lg p-4 bg-[#1a1a2eac]">
         <Tabs
@@ -80,6 +85,7 @@ const ManageReturns = () => {
           </TabPanel>
         </Tabs>
       </div>
+      {/* <AdminFooter /> */}
     </div>
   );
 };

@@ -3,21 +3,26 @@ import AddProduct from "@/components/Dashboard/Admin/Product/AddProduct";
 import ProductManagement from "@/components/Dashboard/Admin/Product/ProductManagement";
 import UserManagement from "@/components/Dashboard/Admin/User/UserManagement";
 import useAllUser from "@/components/hooks/useAllUser";
+import useAuth from "@/components/hooks/useAuth";
 import useProducts from "@/components/hooks/useProducts";
 import usePublicAxios from "@/components/hooks/usePublicAxios";
 import useUser from "@/components/hooks/useUser";
 import ItemNavbar from "@/components/share/ItemNavbar";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 const UserManage = () => {
   const [allUser, refetch] = useAllUser()
-  console.log(allUser);
+  const {user} = useAuth()
   const [selectedTab, setSelectedTab] = useState(0); // Controlled tab state
 
   return (
     <div className="p-6 min-h-screen text-white overflow-y-auto">
+      <Helmet>
+        <title>Admin User Management - Fresher Shop</title>
+      </Helmet>
       {/* Tabs Section */}
       <div className="rounded-lg shadow-lg p-4 bg-[#1a1a2eac]">
         <Tabs

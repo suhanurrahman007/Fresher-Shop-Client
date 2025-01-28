@@ -19,7 +19,10 @@ const DeliveryCard = () => {
       </div>
 
       {/* Right Chart */}
-      <div className="w-3/5 bg-[#0D0D21] p-6 rounded-lg shadow-md">
+      <div
+        data-aos="zoom-in-up"
+        className="w-3/5 bg-[#0D0D21] p-6 rounded-lg shadow-md"
+      >
         <div className="flex justify-between items-center mb-4">
           <h4 className="text-purple-300 font-medium text-xl">Order Report</h4>
           <div className="flex items-center space-x-2 text-orange-500">

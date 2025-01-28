@@ -1,7 +1,7 @@
 "use client";
 import ProductCard from "@/app/(mainLayout)/shop/ProductCard";
 import useProducts from "@/components/hooks/useProducts";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import {
@@ -13,6 +13,7 @@ import {
   FaTshirt,
   FaRegStar,
 } from "react-icons/fa"; // Import icons
+import Aos from "aos";
 
 const product_type = [
   { name: "All", icon: <FaShoppingCart /> },
@@ -31,7 +32,11 @@ const product_type = [
 
 const ProductAll = () => {
   const [products] = useProducts();
-
+ useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
   // Memoizing the Tab components to optimize performance
   const tabs = useMemo(
     () =>
@@ -41,7 +46,7 @@ const ProductAll = () => {
           className="cursor-pointer py-2 px-4 text-left hover:bg-purple-400 hover:text-blue-900 rounded-md transition-all"
           selectedClassName="bg-purple-900 text-purple-200 font-bold flex items-center gap-2"
         >
-          <div className="flex items-center gap-2">
+          <div data-aos="flip-up" className="flex items-center gap-2">
             <span className="text-purple-400">{category.icon}</span>
             {category.name}
           </div>
@@ -62,12 +67,20 @@ const ProductAll = () => {
         <div className="w-full lg:w-3/4 px-5 pt-4 overflow-y-auto">
           {product_type.map((type, index) => (
             <TabPanel key={index}>
-              <h2 className="text-2xl font-bold mb-1 text-purple-200">
+              <h2
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+                className="text-2xl font-bold mb-1 text-purple-200"
+              >
                 {type.name === "All"
                   ? "Complete Collection"
                   : `${type.name} Products`}
               </h2>
-              <p className="text-gray-600 text-sm mb-7">
+              <p
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+                className="text-gray-600 text-sm mb-7"
+              >
                 Browse through our wide range of {type.name.toLowerCase()}{" "}
                 products and find the best deals for you.
               </p>

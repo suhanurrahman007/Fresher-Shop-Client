@@ -14,17 +14,21 @@ import Image from "next/image";
 import { Rating } from "@smastrom/react-rating";
 import SectionTitle from "@/components/share/SectionTitle";
 import useProducts from "@/components/hooks/useProducts";
+import { Helmet } from "react-helmet";
 const Testimonial = () => {
   const [products] = useProducts();
   return (
     <div className="lg:px-16 md:px-8 sm:px-2 px-4">
+      <Helmet>
+        <title>Support & Help - Fresher Shop</title>
+      </Helmet>
       <SectionTitle
         SectionTitle
         header={"Testimonials"}
         miniHeader={"OUR CLIENTS SAY"}
       ></SectionTitle>
 
-      <div>
+      <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <Swiper
           slidesPerView={2}
           spaceBetween={30}
@@ -71,6 +75,7 @@ const Testimonial = () => {
                   <div>
                     {item?.image ? (
                       <Image
+                        data-aos="flip-up"
                         className="rounded-full w-16 h-16"
                         src={item?.image}
                         alt="images"
@@ -79,6 +84,7 @@ const Testimonial = () => {
                       />
                     ) : (
                       <Image
+                        data-aos="flip-up"
                         className="rounded-full w-16 h-16"
                         src={profileImg}
                         alt="images"

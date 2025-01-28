@@ -3,7 +3,6 @@ import { Carousel } from "@/components/share/Carousel/Carousel";
 import Footer from "@/components/share/Footer/Footer";
 import Navbar from "@/components/share/Navbar/Navbar";
 import SideNavbar from "@/components/share/Navbar/SideNavbar";
-import ProductMenu from "@/components/HomeDesign/ProductMenu/ProductMenu";
 import ProductAll from "@/components/HomeDesign/ProductAll/ProductAll";
 const HomePage = () => {
   return (

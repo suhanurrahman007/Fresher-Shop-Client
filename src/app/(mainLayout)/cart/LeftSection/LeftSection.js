@@ -17,7 +17,10 @@ const LeftSection = () => {
 
     return (
       <div className="space-y-3">
-        <div className="space-y-3 bg-[#000C21] p-6 rounded-md">
+        <div
+          data-aos="zoom-in-up"
+          className="space-y-3 bg-[#000C21] p-6 rounded-md"
+        >
           <div className="flex items-center flex-wrap lg:w-[62rem] gap-4">
             {/* Title Section */}
             <div>

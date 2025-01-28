@@ -94,7 +94,10 @@ export const OrderModal = ({ totalPrice, discountPrice }) => {
         >
           <form onSubmit={handleOrder}>
             <div className="p-6">
-              <h2 className="mb-6 text-2xl text-center font-bold text-blue-500">
+              <h2
+                data-aos="flip-up"
+                className="mb-6 text-2xl text-center font-bold text-blue-500"
+              >
                 Fill Delivery Form
               </h2>
 
@@ -149,6 +152,7 @@ export const OrderModal = ({ totalPrice, discountPrice }) => {
 
                 {/* Submit Button */}
                 <button
+                  data-aos="zoom-out-up"
                   type="submit"
                   className="text-xl w-full h-10 text-white bg-sky-800 overflow-hidden relative z-10 group hover:text-sky-900 duration-700"
                 >

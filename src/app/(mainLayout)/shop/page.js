@@ -7,6 +7,7 @@ import useProducts from "@/components/hooks/useProducts";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import ProductCard from "./ProductCard";
 import useCart from "@/components/hooks/useCart";
+import { Helmet } from "react-helmet";
 
 const Shop = () => {
   const [products] = useProducts();
@@ -47,6 +48,9 @@ const Shop = () => {
 
   return (
     <div className="mt-[77px] py-10">
+      <Helmet>
+        <title>Our Shop - Fresher Shop</title>
+      </Helmet>
       <Container>
         <Tabs>
           <TabList

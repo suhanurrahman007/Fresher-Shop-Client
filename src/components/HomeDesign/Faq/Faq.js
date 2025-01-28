@@ -49,7 +49,11 @@ const Faq = () => {
         <div className="justify-center items-center grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
           <Gallery />
           <div>
-            <div className="pt-7">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              className="pt-7"
+            >
               <p className="text-center text-purple-600 mb-2">
                 Still have questions ?
               </p>
@@ -59,7 +63,7 @@ const Faq = () => {
             </div>
             <div className="space-y-4">
               {data?.map((item, idx) => (
-                <div key={idx}>
+                <div data-aos="zoom-in-up" key={idx}>
                   {/* header / Title */}
                   <div
                     onClick={() => handleToggle(idx)}

@@ -3,6 +3,7 @@ import React from "react";
 const Storage = () => {
   return (
     <div
+      data-aos="zoom-in-up"
       className="bg-gray-800 text-white rounded-lg px-5 py-3 w-full shadow-lg shadow-blue-950 relative"
       style={{
         backgroundImage: "url('https://i.ibb.co.com/wLRf4gs/corner-1.png')",

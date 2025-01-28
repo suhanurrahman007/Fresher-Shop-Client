@@ -3,15 +3,13 @@ import React from "react";
 
 const AdminFooter = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400 text-xs py-4 px-6 flex justify-between items-center">
+    <footer className="bg-gray-900 shadow-lg shadow-blue-950  text-gray-400 text-xs mx-4 py-4 px-6 flex justify-between items-center">
       {/* Left Section */}
       <div>
         Thank you for creating with SuHan | 2024 ©{" "}
         <Link
-          href="https://themewagon.com"
+          href="#"
           className="text-blue-500 hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           Supper Shop
         </Link>

@@ -13,7 +13,8 @@ import {
 import { MdMarkEmailRead } from "react-icons/md";
 import toast from "react-hot-toast";
 import useAuth from "@/components/hooks/useAuth";
-import { Banner } from "@/components/share/Banner";
+import Link from "next/link";
+import { Helmet } from "react-helmet";
 
 const ContactUs = () => {
   const form = useRef();
@@ -42,12 +43,19 @@ const ContactUs = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Contact Us - Fresher Shop</title>
+      </Helmet>
       <div className="lg:px-16 md:px-8 sm:px-2 px-4 mb-10">
         <div className="lg:flex gap-10">
           <div className="lg:w-2/3">
             <form ref={form} onSubmit={sendEmail}>
               <div className="space-y-5">
-                <div className="form-control">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  className="form-control"
+                >
                   <input
                     type="text"
                     name="first_name"
@@ -56,7 +64,11 @@ const ContactUs = () => {
                     required
                   />
                 </div>
-                <div className="form-control">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  className="form-control"
+                >
                   <input
                     type="text"
                     name="last_name"
@@ -65,7 +77,11 @@ const ContactUs = () => {
                     required
                   />
                 </div>
-                <div className="form-control">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  className="form-control"
+                >
                   <input
                     type="email"
                     name="email"
@@ -74,7 +90,11 @@ const ContactUs = () => {
                     defaultValue={user?.email}
                   />
                 </div>
-                <div className="form-control">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  className="form-control"
+                >
                   <textarea
                     name="message"
                     placeholder="Message"
@@ -82,7 +102,11 @@ const ContactUs = () => {
                     required
                   ></textarea>
                 </div>
-                <div className="form-control">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  className="form-control"
+                >
                   <input
                     type="submit"
                     value={"Submit Message"}
@@ -93,7 +117,10 @@ const ContactUs = () => {
               </div>
             </form>
           </div>
-          <div className="lg:w-1/3 bg-[#0D0D21] p-5 rounded-md">
+          <div
+            data-aos="zoom-out-up"
+            className="lg:w-1/3 bg-[#0D0D21] p-5 rounded-md"
+          >
             <h2 className="text-2xl font-bold text-purple-800">
               Contact Us :{" "}
             </h2>
@@ -121,37 +148,37 @@ const ContactUs = () => {
               +8801824139665
             </p>
 
-            <div className="flex space-x-7 pt-10">
-              <a
+            <div data-aos="zoom-out-up" className="flex space-x-7 pt-10">
+              <Link
                 href="#"
                 className=" text-3xl text-blue-500 hover:text-blue-700 transform hover:scale-125 transition-transform duration-300"
               >
                 <FaFacebook />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-3xl text-blue-500 hover:text-blue-700 transform hover:scale-125 transition-transform duration-300"
               >
                 <FaLinkedinIn />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-3xl text-pink-500 hover:text-pink-700 transform hover:scale-125 transition-transform duration-300"
               >
                 <FaInstagram />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-3xl text-gray-500 hover:text-gray-700 transform hover:scale-125 transition-transform duration-300"
               >
                 <FaGithub />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-3xl text-blue-400 hover:text-blue-600 transform hover:scale-125 transition-transform duration-300"
               >
                 <FaTwitter />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

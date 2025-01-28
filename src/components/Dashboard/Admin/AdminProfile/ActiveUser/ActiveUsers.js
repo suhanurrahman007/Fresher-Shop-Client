@@ -18,7 +18,10 @@ const ActiveUsers = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 ">
       {/* Active Users */}
-      <div className="bg-[rgb(13,13,33)] p-4 space-y-5 shadow-blue-950 rounded-lg shadow-lg">
+      <div
+        data-aos="zoom-in-up"
+        className="bg-[rgb(13,13,33)] p-4 space-y-5 shadow-blue-950 rounded-lg shadow-lg"
+      >
         <div className="flex justify-between items-center">
           <h2 className="text-md font-semibold text-white">Active Users</h2>
           <BsThreeDots

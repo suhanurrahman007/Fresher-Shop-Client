@@ -22,7 +22,8 @@ const Input = React.forwardRef(({ className, type, ...props }, ref) => {
     mouseY.set(clientY - top);
   }
   return (
-    (<motion.div
+    <motion.div
+      data-aos="zoom-in-up"
       style={{
         background: useMotionTemplate`
       radial-gradient(
@@ -35,7 +36,8 @@ const Input = React.forwardRef(({ className, type, ...props }, ref) => {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
-      className="p-[2px] rounded-lg transition duration-300 group/input">
+      className="p-[2px] rounded-lg transition duration-300 group/input"
+    >
       <input
         type={type}
         className={cn(
@@ -48,8 +50,9 @@ const Input = React.forwardRef(({ className, type, ...props }, ref) => {
           className
         )}
         ref={ref}
-        {...props} />
-    </motion.div>)
+        {...props}
+      />
+    </motion.div>
   );
 });
 Input.displayName = "Input";

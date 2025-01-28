@@ -11,12 +11,16 @@ import Image from "next/image";
 import Link from "next/link";
 import DarkCalendar from "../../../components/share/Calendar/Calendar";
 import { format } from "date-fns";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   const [posts] = usePosts();
   const [latestPosts] = useLatestPosts();
   return (
     <div className="max-w-[2520px] grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3 mx-auto lg:px-20 md:px-10 sm:px-2 px-4 py-7 pt-28">
+      <Helmet>
+        <title>Blog - Fresher Shop</title>
+      </Helmet>
       <div className="lg:col-span-2 space-y-10">
         {posts?.map((post) => (
           <Post key={post._id} post={post}></Post>
