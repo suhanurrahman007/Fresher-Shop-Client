@@ -25,7 +25,7 @@ const AdminProfile = () => {
   const displayName = user?.displayName || "Admin";
 
   return (
-    <div className="p-4 text-white space-y-9">
+    <div className="p-4 text-white space-y-9 overflow-y-auto">
       <h2 className="text-2xl text-purple-300 font-bold -mb-4">
         Hi, <span className="text-orange-700">{displayName}</span> Welcome Back!
       </h2>

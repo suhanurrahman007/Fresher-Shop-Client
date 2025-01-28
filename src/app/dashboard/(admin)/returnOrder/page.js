@@ -11,7 +11,7 @@ const ReturnOrder = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
-    <div className="p-6 min-h-screen text-white">
+    <div className="p-6 min-h-screen text-white overflow-y-auto">
       {/* Tabs Section */}
       <div className="rounded-lg shadow-lg p-4 bg-[#1a1a2eac]">
         <Tabs
@@ -57,7 +57,10 @@ const ReturnOrder = () => {
 
           {/* Tab Panels */}
           <TabPanel className="mt-4">
-            <ReturnProductManagement returnProduct={returnProduct} refetch={refetch} />
+            <ReturnProductManagement
+              returnProduct={returnProduct}
+              refetch={refetch}
+            />
           </TabPanel>
           <TabPanel className="mt-4">
             <p className="text-gray-300">Pricing Table content will go here.</p>

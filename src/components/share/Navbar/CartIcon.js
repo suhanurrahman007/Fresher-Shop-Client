@@ -8,9 +8,9 @@ export function CartShop() {
   const myCart = cart?.filter((item) => item?.customerName === user?.name);
 
   return (
-    <div className="relative w-fit ml-5 mr-2">
-      <FaCartArrowDown className="w-8 text-2xl" />
-      <span className="absolute -right-1 -top-2 flex size-5 items-center justify-center rounded-full bg-red-500 text-center text-[10px] text-white">
+    <div className="relative w-fit ml-10 -mr-3">
+      <FaCartArrowDown className="w-7 text-2xl text-purple-400" />
+      <span className="absolute -right-1 -top-2 flex size-4 items-center justify-center rounded-full bg-blue-700 text-center text-[10px] text-white">
         {myCart?.length}
       </span>
     </div>
@@ -21,7 +21,7 @@ export function CartNotification() {
   return (
     <div className="relative w-fit">
       <svg
-        className="w-8"
+        className="w-7"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export function CartNotification() {
           ></path>
         </g>
       </svg>
-      <span className="absolute -right-1 -top-2 flex size-5 items-center justify-center rounded-full bg-red-500 text-center text-[10px] text-white">
+      <span className="absolute -right-1 -top-2 flex size-4 items-center justify-center rounded-full bg-red-500 text-center text-[10px] text-white">
         12
       </span>
     </div>

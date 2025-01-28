@@ -295,7 +295,7 @@ const DashboardLayout = ({ children }) => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu w-64 min-h-full text-white bg-[#0D0D21] flex justify-between">
+          <ul className="menu w-64 min-h-full sticky overflow-y-auto text-white bg-[#0D0D21] flex justify-between">
             {/* Sidebar content here */}
             <div>
               <div>
@@ -340,14 +340,14 @@ const DashboardLayout = ({ children }) => {
                     className="rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
                   >
                     <span>
-                      <BiLogOut></BiLogOut>
+                      <BiLogOut className="text-purple-600"></BiLogOut>
                     </span>
                     Logout
                   </button>
                 ) : (
                   <Link
                     className="rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center gap-1"
-                    href={"/login"}
+                    href={"/signIn"}
                   >
                     <span className="">
                       <MdLogin className="text-purple-600"></MdLogin>

@@ -6,9 +6,11 @@ import { TextArea } from "@/components/ui/textArea";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { LabelInputContainer } from "@/components/ui/LabelInputContainer";
+import useAuth from "@/components/hooks/useAuth";
 
 export default function Job({ refetch }) {
   const publicAxios = usePublicAxios();
+  const {user} = useAuth()
 
   const {
     register,
@@ -19,8 +21,8 @@ export default function Job({ refetch }) {
   const onSubmit = async (data) => {
     // Create product object
     const jobInfo = {
-      fullName: data?.name,
-      email: data?.email,
+      fullName: user?.displayName,
+      email: user?.email,
       age: data?.age,
       address: data?.address,
       experience: data?.experience,
@@ -47,7 +49,7 @@ export default function Job({ refetch }) {
   };
 
   return (
-    <div className=" inset-0 z-50 grid place-items-center bg-black/20 backdrop-blur-sm duration-100 dark:bg-transparent">
+    <div className=" inset-0 z-50 grid place-items-center bg-black/20 backdrop-blur-sm duration-100 dark:bg-transparent overflow-y-auto">
       <div className="relative w-full max-w-4xl p-6 rounded-lg bg-white shadow-lg dark:bg-[#0D0D21] dark:text-white">
         {/* Modal Form */}
         <form
@@ -67,6 +69,7 @@ export default function Job({ refetch }) {
                   <Input
                     id="name"
                     {...register("name", { required: true })}
+                    defaultValue={user?.displayName ? user?.displayName : ""}
                     placeholder="Enter Your Full Name"
                     type="text"
                   />
@@ -99,7 +102,8 @@ export default function Job({ refetch }) {
                   <Input
                     id="email"
                     {...register("email", { required: true })}
-                    placeholder="Enter Your Email"
+                    defaultValue={user?.email ? user?.email : ""}
+                    disabled
                     type="email"
                   />
                 </LabelInputContainer>

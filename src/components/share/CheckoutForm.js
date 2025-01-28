@@ -80,7 +80,7 @@ const CheckoutForm = ({ amount, order, findOrder }) => {
         amount,
         transactionId: paymentIntent.id,
         payment: "Paid",
-        date: new Date(),
+        time: new Date(),
       };
 
       try {

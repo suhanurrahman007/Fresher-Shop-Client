@@ -12,7 +12,7 @@ const ProductManage = () => {
   const [selectedTab, setSelectedTab] = useState(0); // Controlled tab state
 
   return (
-    <div className="p-6 min-h-screen text-white">
+    <div className="p-6 min-h-screen text-white overflow-y-auto">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl text-purple-300 font-bold">Products Manage</h1>
@@ -60,7 +60,7 @@ const ProductManage = () => {
           </TabList>
 
           {/* Product Navbar */}
-          <ItemNavbar item={products}/>
+          <ItemNavbar item={products} />
 
           {/* Tab Panels */}
           <TabPanel className="mt-4">

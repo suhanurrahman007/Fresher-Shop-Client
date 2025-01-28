@@ -10,7 +10,7 @@ const DeliveryProfile = () => {
   // const { user } = useAuth();
 
   return (
-    <div className="py-5 space-y-7 p-5 text-purple-200">
+    <div className="py-5 space-y-7 p-5 text-purple-200 overflow-y-auto">
       <h2 className="text-2xl font-bold">
         Hi,{" "}
         <span className="text-blue-600">

@@ -11,7 +11,8 @@ import Image from "next/image";
 import logo from "@/assets/Logo.png";
 import avatar from "@/assets/avatar.png";
 import toast from "react-hot-toast";
-import { CartShop } from "./CartIcon";
+import { CartNotification, CartShop } from "./CartIcon";
+import Notifications from "../Notifications/Notification";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -169,7 +170,7 @@ const Navbar = () => {
                 className={`nav-link ${
                   pathname === "/cart"
                     ? "active"
-                    : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out flex items-center"
+                    : " rounded-lg hover:underline hover:scale-110 hover:shadow-lg transition delay-150 duration-300 ease-in-out text-purple-700 flex items-center"
                 }`}
               >
                 <CartShop />
@@ -190,6 +191,8 @@ const Navbar = () => {
           <ul class="menu menu-horizontal flex items-center">
             {/* <!-- Navbar menu content here --> */}
             {links}
+            {user && <Notifications />}
+
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="relative group">

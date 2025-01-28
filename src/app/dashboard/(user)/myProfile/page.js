@@ -7,7 +7,7 @@ import useAuth from "@/components/hooks/useAuth";
 const MyProfile = () => {
   const { user } = useAuth();
   return (
-    <div className="px-4 py-8 bg-[#010313] text-white space-y-8">
+    <div className="px-4 py-8 bg-[#010313] text-white space-y-8 overflow-y-auto">
       <h2 className="text-2xl font-bold">
         Hi,{" "}
         <span className="text-orange-700">

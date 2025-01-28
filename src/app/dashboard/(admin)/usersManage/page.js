@@ -17,7 +17,7 @@ const UserManage = () => {
   const [selectedTab, setSelectedTab] = useState(0); // Controlled tab state
 
   return (
-    <div className="p-6 min-h-screen text-white">
+    <div className="p-6 min-h-screen text-white overflow-y-auto">
       {/* Tabs Section */}
       <div className="rounded-lg shadow-lg p-4 bg-[#1a1a2eac]">
         <Tabs
